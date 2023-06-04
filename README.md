@@ -3,8 +3,11 @@
 ## by GoIT project-team-4 "PyCrafters"
 
 Team Leader: Heorhii
+
 Scrum-master: Heorhii
+
 Project mentor and Owner: Oleksii F.
+
 **Team composition:**
 
     • Mihailo 
