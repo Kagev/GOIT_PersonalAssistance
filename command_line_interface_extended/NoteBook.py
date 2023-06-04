@@ -1,13 +1,21 @@
 from collections import UserDict, UserList
 from datetime import datetime
 
+class Note(UserDict):
+    def add_tag(self, tag: str) -> None:
+        if tag:
+            self.data['tag'] = list(tag.split(' '))
+
+    def add_note(self, note: str) -> None:
+        self.data['notes'] = note
+        self.data['date_of_change'] = str(datetime.now())
+
+    
+
 
 class NotesBook(UserList):
 
-    def add_record(self, tag: str, notes: str) -> None:
-        record = {'tag': tag,
-                  'notes': notes,
-                  'date_of_change': datetime.now()}
+    def add_record(self, record: Note) -> None:
         self.append(record)
 
     def search_note_by_tag(self, search_tag: str) -> str:
@@ -18,10 +26,11 @@ class NotesBook(UserList):
 
         return search_note
 
+a = Note()
+a.add_tag('as sd df')
+a.add_note('asdffrfdsf')
+
 
 c = NotesBook()
-c.add_record('as sd df', 'asdfsdfsd')
-c.add_record('as ed rfdf fr', 'sdeffgthtyhyhy')
-print(c.search_note_by_tag('as'))
-
-
+c.add_record(a)
+c.search_note_by_tag('as')
