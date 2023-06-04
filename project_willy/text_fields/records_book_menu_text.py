@@ -1,35 +1,17 @@
 
-
-class GeneralText:
-
-    START = ['start', 'hello', 'hi', '',]
-    CONTINUE = ['', 'continue']
-    EXIT = ['exit', 'close']
-    
-    start_message = \
-    '\n{:^40}\n{:^40}\n'.format('---HELLO---', '-'*40)+\
-    '|{:^38}|\n'.format("I'M RECORDS BOOK v0.8.*")+\
-    '|{:^38}|\n{:^40}\n'.format("NICE TO MEET YOU!", '-'*40)
-    
-    start_input_message = 'Enter "start" to begin!\n>>> '
-    hello_message = '\nHow can I help you?'
-    exit_message = '\nleaving so soon? Okay...\n'
-    wrong_input_message = '\nHmm.. Somesing wrong. Try again.\n'
-    continue_input_message = 'Press enter to continue.\n>>> '
-
-
-class MainMenuText:
+class RecordsBookMenuText:
 
     options_message =\
-    '\n{:^40}\n{:^40}\n'.format('---MAIN MENU---', '-'*40)+\
+    '\n{:^40}\n{:^40}\n'.format('---RECORDS BOOK MENU---', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('1. ADD NEW RECORD', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('2. CHANGE EXISTS RECORD', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('3. SHOW RECORDS', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('4. IMPORT RECORDS BOOK', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('5. EXPORT RECORDS BOOK', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('6. CLEAR RECORDS BOOK', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
-    input_message = 'You are in "MAIN MENU". Choose one of the options.\n>>> '
+    input_message = 'You are in "RECORDS BOOK MENU". Choose one of the options.\n>>> '
     clear_successful_message = '\nThe record book has been cleared successfully!\n'
     clear_input = 'Are you sure? Enter "y" to continue.\n>>> '
 
@@ -113,7 +95,7 @@ class ImportMenuText:
     '\n{:^40}\n{:^40}\n'.format('---IMPORT MENU---', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
-    
+
     input_message = 'Specify path to your backup of records book.\n>>> '
     file_not_exists_message = '\nThe specified path does not exist. Try again.\n'
     import_records_book_successful_message = '\nRecords book has been successfully updated!\n'
@@ -140,27 +122,3 @@ class ExportMenuText:
     json_path_input_message = 'JSON. Specify the path for export.\n>>> '
     csv_path_input_message = 'CSV. Specify the path for export.\n>>> '
     records_book_successful_message = '\nRecords book has been successfully exported!\n'
-
-
-class ErrorsText:
-    index_error_message = '\nSomething wrong, try again. [IndexError]\n'
-    key_error_message = "\nI don't know record with this name, sorry. [KeyError]\n"
-    type_error_message = '\nSomething wrong, try again. [TypeError]\n'
-    value_error_message = '\nSomething wrong, try again. [ValueError]\n'
-    phone_error_message = '\nPhone must be numeric with 12 symbols. Phone type must be is one of "work", "mobile" or "home".\n'
-    name_error_message = '\nFirst name or last name must be greater than one symbol and less than 16 symbols\n'
-    email_error_message = '\nEmail must be less than 32 char and valid!\n'
-    birthday_error_message = '\nBirthday must be in [dd-mm-yyyy] format and not in the future!\n'
-    exit_message = \
-    '\n{:^40}\n'.format('---GOOD BYE---')+\
-    '\n{:^40}\n'.format("HOPE WE MEET AGAIN!")
-
-
-class MethodsText:
-    
-    ALLOWED_PHONE_TYPES = ['mobile', 'work', 'home']
-    DEFAULT_PHONE_TYPE = 'mobile'
-    DEFAULT_EMPTY_FIELD = 'empty'
-    
-    birthday_is_today_message = 'Birthday is today!'
-    days_to_birthday_message = 'Days to birthday'
