@@ -1,6 +1,6 @@
 # GOIT_PersonalAssistance
 
-## by GoIT project-team-4 " "
+## by GoIT project-team-4 "PyCrafters"
 
 Team Leader: Heorhii
 Scrum-master: Heorhii
@@ -16,7 +16,7 @@ Project mentor and Owner: Oleksii F.
 
 
 ### Eng
-**Personal Assistant with Command-Line Interface Menu**
+** 'WILLI' - Personal Assistant with Command-Line Interface Menu**
 
 This Python program is a personal assistant with the following capabilities: storing contacts with names, addresses, phone numbers, email addresses, and birthdays in a contact book; displaying a list of contacts whose birthday is within a specified number of days from the current date; validating the input of phone numbers and email addresses during contact creation or editing and notifying the user in case of incorrect input; performing a search for contacts within the contact book; editing and deleting entries from the contact book; storing text-based notes; searching for notes; editing and deleting notes; adding "tags" to notes, which are keywords describing the topic and subject of the note; searching and sorting notes by tags; sorting files in a specified folder by categories such as images, documents, videos, etc.
 
@@ -51,7 +51,7 @@ This Python program is a personal assistant with the following capabilities: sto
     This Readme.md file provides a general description of the "Personal Assistant" program. To use the program, please run the corresponding Python file and follow the instructions provided in the command line.
 
 ### UA
-**Персональний помічник з командно-інтерфейсне меню**
+** 'WILLI' - Персональний помічник з командно-інтерфейсне меню**
 
 Ця програма Python є персональним помічником з можливостями зберігання контактів, нотаток та сортування файлів за категоріями. Нижче наведено опис основних функцій програми:
 
