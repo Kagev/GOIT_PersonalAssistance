@@ -1,5 +1,5 @@
-from menu import MainMenu
-from text_fields import GeneralText
+from menu.menu import MainMenu
+from text_fields.general_text import GeneralText
 
 
 # ----------ENTER TO MAIN MENU----------
