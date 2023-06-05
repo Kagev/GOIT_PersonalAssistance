@@ -9,3 +9,5 @@ class EmailError(Exception):
     pass
 class BirthdayError(Exception):
     pass
+class NotesError(Exception):
+    pass
