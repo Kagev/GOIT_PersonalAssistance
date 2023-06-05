@@ -5,5 +5,13 @@
             "name": "Python configuration",
         },
         
+        {
+            "type": "python-tests",
+            "name": "Python-tests configuration",
+            "testFramework": "",
+            "target": "",
+            "arguments": [],
+        },
+        
     ]
 }
