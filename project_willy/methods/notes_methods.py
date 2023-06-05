@@ -10,6 +10,9 @@ class Notes(UserDict):
             'date_of_change': None
         }
 
+    def str(self) -> str:
+        return f"Tags: {', '.join(self.data['tags'])}\nText: {self.data['notes']}\n"
+
     def add_tags(self, user_input: str) -> None:
         if user_input.strip():
             new_tags = user_input.strip().split()
@@ -68,3 +71,44 @@ class NotesBook(UserList):
                     count += 1
         if result.values():
             return result
+
+    def sort_by_date(self):
+        result = {}
+        index = 1
+
+        # Збираємо та сортуємо всі наявні дати
+        sorted_dates = sorted([note['date_of_change'] for note in self.data])
+
+        # Ітеруємось по списку та повертаємо словник із нотатками, відсортованих по даті
+        for note_date in sorted_dates:
+            for note in self.data:
+                if note_date == note['date_of_change']:
+                    result.update({index: note})
+                    index += 1
+        return result
+
+    def sort_by_tag(self):
+        list_of_tags = []
+        result = {}
+        index = 1
+
+        # Збираємо та відсортовуємо всі наявні теги
+        for note in self.data:
+            temp_result = ''
+            temp_list = sorted([tag for tag in note['tags']])
+            for elem in temp_list:
+                temp_result += elem + ' '
+            temp_list.clear()
+
+            list_of_tags.append(temp_result.removesuffix(' '))
+            list_of_tags.sort()
+
+        # Ітеруємось по списку та повертаємо словник із нотатками, відсортованих по тегах
+        for sorted_tags in list_of_tags:
+            temp_tags = set(sorted_tags.split(' '))
+            for note in self.data:
+                check_set = temp_tags & set(note['tags'])
+                if len(check_set) == len(temp_tags):
+                    result.update({index: note})
+                    index += 1
+        return result

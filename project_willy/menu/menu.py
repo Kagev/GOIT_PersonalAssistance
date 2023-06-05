@@ -18,13 +18,11 @@ from text_fields.records_book_menu_text import RecordsBookMenuText, AddRecordMen
 from text_fields.notes_menu_text import NotesMenuText, AddNotesMenuText, ChangeNotesMenuText, ShowNotesMenuText
 
 
-
 # ----------MENUS & SUBMENUS----------
 
 class General:
 
     AUTOSAVE_PATH = Path(os.getcwd()) / '_autosave.bin'
-
 
     file_operations = FileOperations
 
@@ -695,7 +693,7 @@ class NotesMenu(General):
         
     def option_change_notes(self) -> None:
         ChangeNotesMenu()
-        
+
     def option_show_notes(self) -> None:
         ShowNotesMenu()
 
@@ -858,6 +856,7 @@ class ChangeNotesMenu(General):
     @error_handler
     def option_change_notes_text(self) -> None:
         print(ChangeNotesMenuText.submenu_options_message)
+
         while True:
             self.change_text_in_notes()
 
@@ -930,6 +929,15 @@ class ShowNotesMenu(General):
         while True:
             self.find_and_show_record()
 
+    # @error_handler
+    # def find_and_show_record(self, user_input) -> str:
+    #     result = ''
+    #     dict_of_notes = NOTES_BOOK.find_notes(user_input)
+    #     if dict_of_notes:
+    #         for indx, notes in dict_of_notes.items():
+    #             result += f"\nNotes {indx}:\n{notes}\n"
+    #         return result
+    # print(ShowNotesMenuText.no_matches_message)
     @error_handler
     def find_and_show_record(self) -> None:
         result = ''
@@ -938,7 +946,7 @@ class ShowNotesMenu(General):
         dict_of_notes = notes_book.find_notes(user_input)
         if dict_of_notes:
             for indx, notes in dict_of_notes.items():
-                result += f"\nNotes {indx}:\n {notes.show_notes()}\n"
+                result += f"\nNotes {indx}:\n {notes}\n"
         if result:
             print(result)
             input(GeneralText.continue_input_message)
@@ -948,15 +956,30 @@ class ShowNotesMenu(General):
 # SHOW SORTED ALL BY A-Z
     @error_handler
     def option_sort_a_z(self) -> None:
-        print(notes_book.data)
-        input(GeneralText.continue_input_message)   
-        ShowNotesMenu()
+        result = ''
+        dict_of_notes = notes_book.sort_by_tag()
+        if dict_of_notes:
+            for indx, notes in dict_of_notes.items():
+                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків!
+        if result:
+            print(result)
+            input(GeneralText.continue_input_message)
+            ShowNotesMenu()
+        print(ShowNotesMenuText.no_matches_message)
 
 # SHOW SORTED ALL BY DATE
     @error_handler
     def option_sort_date(self) -> None:
-        input(GeneralText.continue_input_message)   
-        ShowNotesMenu()
+        result = ''
+        dict_of_notes = notes_book.sort_by_date()
+        if dict_of_notes:
+            for indx, notes in dict_of_notes.items():
+                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків!
+        if result:
+            print(result)
+            input(GeneralText.continue_input_message)
+            ShowNotesMenu()
+        print(ShowNotesMenuText.no_matches_message)
 
 # DEBUG
     @error_handler
@@ -970,11 +993,53 @@ class ShowNotesMenu(General):
     def option_return_to_show_notes_menu(self) -> None:
         ShowNotesMenu()
 
-    # RETURN TO NOTES MENU
+    @error_handler
+    def change_text_in_notes(self) -> None:
+        user_input = input(ChangeNotesMenuText.text_input_message)
+        self.options_handler(user_input, self.SUBMENU_OPTIONS)        
+        self.notes.add_text(user_input)
+        self.notes.create_notes()
+        self.autosave()
+        self.change_notes_menu()
+    
+# DELETE NOTES
+    @error_handler
+    def option_delete_notes(self) -> None:
+        user_input = input(ChangeNotesMenuText.delete_input)
+        if user_input == 'y':
+            notes_book.delete_notes(self.notes)
+            self.autosave()
+            print(ChangeNotesMenuText.delete_successful_message)
+            input(GeneralText.continue_input_message)
+            NotesMenu()
+            
+# RETURN TO CHANGE NOTES MENU
+    def option_retun_to_change_notes_menu(self):
+        self.change_notes_menu()
+        
+# RETURN TO NOTES MENU
     @error_handler
     def option_retun_to_notes_menu(self) -> None:
         NotesMenu()
 
+class ShowNotesMenu(General):
+# OPTIONS
+    def __init__(self) -> None:
+        self.MENU_OPTIONS = {
+        '1': self.option_find_record,            
+        '2': self.option_sort_a_z,
+        '3': self.option_sort_date,
+        '4': self.option_debug,
+        '0': self.option_retun_to_notes_menu,
+        'exit': self.option_exit_from_cli,
+        }
+        self.SUBMENU_OPTIONS = {
+        '0': self.option_return_to_show_notes_menu,
+        'exit': self.option_exit_from_cli,
+        }
+        super().option_exit_from_cli
+        super().options_handler
+        self.__call__()
 
 records_book, notes_book = General.create_or_restore_data(self=General)
 
