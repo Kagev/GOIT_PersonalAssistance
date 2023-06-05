@@ -19,7 +19,7 @@ class RecordsBookMenuText:
 class AddRecordMenuText:
     options_message = \
     '\n{:^40}\n{:^40}\n'.format('---ADDING RECORD MENU---', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO RECORDS BOOK MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
     
     name_input_message = 'Input user first name and last, please. [First name required]\n>>> '
@@ -39,7 +39,7 @@ class ChangeRecordMenuText:
     '|{:^38}|\n{:^40}\n'.format('4. CHANGE RECORD BIRTHDAY', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('5. CHOOSE ANOTHER RECORD', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('6. DELETE RECORD', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO RECORDS BOOK MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
 
     empty_records_book_message = '\nRecord book is empty. Nothing to change.\n'
@@ -58,7 +58,7 @@ class ChangeRecordMenuText:
     
     premenu_options_message = \
     '\n{:^40}\n{:^40}\n'.format('---CHANGE RECORD PREMENU---', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO RECORDS BOOK MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
     
     submenu_options_message = \
@@ -73,8 +73,8 @@ class ShowRecordsMenuText:
     '|{:^38}|\n{:^40}\n'.format('1. FIND RECORD', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('2. SHOW RECORD', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('3. SHOW ALL RECORDS', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('4. DEBUG', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('4. DEBUG INFO', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO RECORDS BOOK MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
     
     submenu_options_message = \
@@ -93,7 +93,7 @@ class ShowRecordsMenuText:
 class ImportMenuText:
     options_message = \
     '\n{:^40}\n{:^40}\n'.format('---IMPORT MENU---', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO RECORDS BOOK MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
 
     input_message = 'Specify path to your backup of records book.\n>>> '
@@ -108,14 +108,14 @@ class ExportMenuText:
     '|{:^38}|\n{:^40}\n'.format('2. PICKLE (RECOMENDED FOR BACKUP)', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('3. JSON', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('4. CSV (TABLE WIEV)', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO MAIN MENU', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO RECORDS BOOK MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
     
     submenu_options_message = \
     '\n{:^40}\n{:^40}\n'.format('---EXPORT SUBMENU---', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('0. RETURN TO EXPORT MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
-    
+    empty_records_book_message = '\nRecord book is empty. Nothing to export.\n'
     input_message = 'Choose file format to export.\n>>> '
     txt_path_input_message = 'TXT. Specify the path for export.\n>>> '
     pickle_path_input_message = 'PICKLE. Specify the path for export.\n>>> '

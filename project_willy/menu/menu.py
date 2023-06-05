@@ -1,9 +1,11 @@
 from imports import os, Path, traceback, deepcopy
 
-from methods.records_book_methods import Name, Phone, Email, Birthday
-from methods.records_book_methods import Record
-from methods.records_book_methods import RecordsBook
+from methods.records_book_methods import Name, Phone, Email, Birthday, Record, RecordsBook
+
+from methods.notes_methods import Notes, NotesBook
+
 from methods.file_operations_methods import FileOperations
+
 from methods.errors import ExitFromCLI
 from methods.errors_processing import error_handler
 
@@ -11,23 +13,26 @@ from methods.clean_folder import launch_script as clean_folder
 
 from text_fields.general_text import GeneralText
 from text_fields.main_menu_text import MainMenuText
-from text_fields.records_book_menu_text import RecordsBookMenuText, AddRecordMenuText, ChangeRecordMenuText, \
-    ShowRecordsMenuText, ImportMenuText, ExportMenuText
-from text_fields.notes_menu_text import NotesMenuText, AddNotesMenuText, ChangeNotesMenuText
+
+from text_fields.records_book_menu_text import RecordsBookMenuText, AddRecordMenuText, ChangeRecordMenuText, ShowRecordsMenuText, ImportMenuText, ExportMenuText
+from text_fields.notes_menu_text import NotesMenuText, AddNotesMenuText, ChangeNotesMenuText, ShowNotesMenuText
+
 
 
 # ----------MENUS & SUBMENUS----------
 
 class General:
-    AUTOSAVE_PATH = Path(os.getcwd()) / 'records_book_autosave.bin'
+
+    AUTOSAVE_PATH = Path(os.getcwd()) / '_autosave.bin'
+
 
     file_operations = FileOperations
 
-    def create_or_restore_records_book(self) -> RecordsBook:
+    def create_or_restore_data(self) -> RecordsBook:
         if self.AUTOSAVE_PATH.is_file():
             result = self.file_operations.import_from_pickle(self.AUTOSAVE_PATH)
         else:
-            result = RecordsBook()
+            result = (RecordsBook(), NotesBook())
         return result
 
     @error_handler
@@ -36,8 +41,8 @@ class General:
         if command in options:
             options[command]()
 
-    def record_book_autosave(self):
-        self.file_operations.export_to_pickle(self.AUTOSAVE_PATH, records_book)
+    def autosave(self):
+        self.file_operations.autosave_to_pickle(self.AUTOSAVE_PATH, records_book, notes_book)
 
     @error_handler
     def option_exit_from_cli(self) -> None:
@@ -170,7 +175,7 @@ class AddRecordMenu(General):
         }
         super().option_exit_from_cli
         super().options_handler
-        super().record_book_autosave
+        super().autosave
         self.record = Record()
         self.__call__()
 
@@ -190,7 +195,7 @@ class AddRecordMenu(General):
                 self.add_birthday_to_record()
             else:
                 records_book.add_record(self.record)
-                self.record_book_autosave()
+                self.autosave()
                 print(AddRecordMenuText.add_successful_message)
                 input(GeneralText.continue_input_message)
                 MainMenu()
@@ -252,7 +257,7 @@ class ChangeRecordMenu(General):
             'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
-        super().record_book_autosave
+        super().autosave
         super().options_handler
         self.record = None
         self.__call__()
@@ -302,7 +307,7 @@ class ChangeRecordMenu(General):
         self.record.add_name(Name(user_input))
         records_book.add_record(self.record)
         records_book.delete_record(old_record)
-        self.record_book_autosave()
+        self.autosave()
         print(ChangeRecordMenuText.change_successful_message)
         input(GeneralText.continue_input_message)
         self.change_record_menu()
@@ -320,7 +325,7 @@ class ChangeRecordMenu(General):
         self.options_handler(user_input, self.SUBMENU_OPTIONS)
         self.record.add_phone(Phone(user_input))
         records_book.add_record(self.record)
-        self.record_book_autosave()
+        self.autosave()
         print(ChangeRecordMenuText.change_successful_message)
         input(GeneralText.continue_input_message)
         self.change_record_menu()
@@ -338,7 +343,7 @@ class ChangeRecordMenu(General):
         self.options_handler(user_input, self.SUBMENU_OPTIONS)
         self.record.add_email(Email(user_input))
         records_book.add_record(self.record)
-        self.record_book_autosave()
+        self.autosave()
         print(ChangeRecordMenuText.change_successful_message)
         input(GeneralText.continue_input_message)
         self.change_record_menu()
@@ -356,7 +361,7 @@ class ChangeRecordMenu(General):
         self.options_handler(user_input, self.SUBMENU_OPTIONS)
         self.record.add_birthday(Birthday(user_input))
         records_book.add_record(self.record)
-        self.record_book_autosave()
+        self.autosave()
         print(ChangeRecordMenuText.change_successful_message)
         input(GeneralText.continue_input_message)
         self.change_record_menu()
@@ -373,10 +378,10 @@ class ChangeRecordMenu(General):
         user_input = input(ChangeRecordMenuText.delete_input)
         if user_input == 'y':
             records_book.delete_record(self.record)
-            self.record_book_autosave()
+            self.autosave()
             print(ChangeRecordMenuText.delete_successful_message)
             input(GeneralText.continue_input_message)
-            self.change_record_menu()
+            RecordsBookMenu()
 
     # RETURN TO MAIN MENU
     @error_handler
@@ -420,7 +425,7 @@ class ShowRecordsMenu(General):
         if not records_book.data:
             print(ShowRecordsMenuText.empty_records_book_message)
             input(GeneralText.continue_input_message)
-            MainMenu()
+            RecordsBookMenu()
         else:
             while True:
                 print(ShowRecordsMenuText.options_message)
@@ -550,11 +555,16 @@ class ExportMenu(General):
     # MAIN CALL
     @error_handler
     def __call__(self) -> None:
-        print(ExportMenuText.options_message)
-        while True:
-            user_input = input(ExportMenuText.input_message)
-            self.options_handler(user_input, self.EXPORT_MENU_OPTIONS)
-            print(GeneralText.wrong_input_message)
+        if not records_book.data:
+            print(ExportMenuText.empty_records_book_message)
+            input(GeneralText.continue_input_message)
+            RecordsBookMenu()
+        else:
+            print(ExportMenuText.options_message)
+            while True:
+                user_input = input(ExportMenuText.input_message)
+                self.options_handler(user_input, self.EXPORT_MENU_OPTIONS)
+                print(GeneralText.wrong_input_message)
 
     # EXPORT TO TXT
     @error_handler
@@ -591,7 +601,8 @@ class ExportMenu(General):
         if path_from_user == '':
             path_for_export = Path(os.getcwd()) / 'records_book.bin'
         else:
-            path_for_export = Path(path_from_user + '.pickle')
+            path_for_export = Path(path_from_user+'.bin')
+
         self.file_operations.export_to_pickle(path_for_export, records_book)
         print(ExportMenuText.records_book_successful_message)
         input(GeneralText.continue_input_message)
@@ -656,13 +667,17 @@ class NotesMenu(General):
     # OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
-            '1': self.option_add_new_notes,
-            '2': self.option_change_notes,
-            '0': self.option_return_to_main_menu,
-            'exit': self.option_exit_from_cli,
+
+        '1': self.option_add_new_notes,
+        '2': self.option_change_notes,
+        '3': self.option_show_notes,
+        '4': self.option_clear_notes_book,
+        '0': self.option_return_to_main_menu,
+        'exit': self.option_exit_from_cli,
+
         }
+        super().option_exit_from_cli
         super().options_handler
-        super().record_book_autosave
         self.__call__()
 
     # MAIN CALL
@@ -670,21 +685,47 @@ class NotesMenu(General):
     def __call__(self) -> None:
         print(NotesMenuText.options_message)
 
-    # RETURN TO NOTES MENU
+        while True:
+            user_input = input(NotesMenuText.input_message)
+            self.options_handler(user_input, self.MENU_OPTIONS)
+            print(GeneralText.wrong_input_message)        
+
+    def option_add_new_notes(self) -> None:
+        AddNotesMenu()
+        
+    def option_change_notes(self) -> None:
+        ChangeNotesMenu()
+        
+    def option_show_notes(self) -> None:
+        ShowNotesMenu()
+
+# CLEAR NOTES BOOK
+    @error_handler
+    def option_clear_notes_book(self) -> None:
+        user_input = input(NotesMenuText.clear_input)
+        if user_input == 'y':
+            notes_book.clear()
+            print(NotesMenuText.clear_successful_message)
+            input(GeneralText.continue_input_message)
+            NotesMenu()
+
+# RETURN TO MAIN MENU
     @error_handler
     def option_return_to_main_menu(self) -> None:
         MainMenu()
-
-
-class AddNoteMenu():
-    # OPTIONS
+    
+class AddNotesMenu(General):
+# OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
-            '0': self.option_retun_to_main_menu,
-            'exit': self.option_exit_from_cli,
+        '0': self.option_retun_to_notes_menu,
+        'exit': self.option_exit_from_cli,
+
         }
+        super().option_exit_from_cli
         super().options_handler
-        super().record_book_autosave
+        super().autosave
+        self.notes = Notes()
         self.__call__()
 
     # MAIN CALL
@@ -692,31 +733,242 @@ class AddNoteMenu():
     def __call__(self) -> None:
         print(AddNotesMenuText.options_message)
         while True:
-            pass
+            print(self.notes.notes_info())
+            if not self.notes['tags']:
+                self.add_tags_to_notes()
+            elif not self.notes['notes']:
+                self.add_text_to_notes()
+            else:
+                self.notes.create_notes()
+                notes_book.add_notes(self.notes)
+                self.autosave()
+                print(AddNotesMenuText.add_successful_message)
+                input(GeneralText.continue_input_message)
+                NotesMenu()
+    
+    @error_handler
+    def add_tags_to_notes(self) -> None:
+        user_input = input(AddNotesMenuText.tags_input_message)
+        self.options_handler(user_input, self.MENU_OPTIONS)
+        self.notes.add_tags(user_input)
+    
+    @error_handler
+    def add_text_to_notes(self) -> None:
+        user_input = input(AddNotesMenuText.text_input_message)
+        self.options_handler(user_input, self.MENU_OPTIONS)
+        self.notes.add_text(user_input)
 
     # RETURN TO NOTES MENU
     @error_handler
     def option_retun_to_notes_menu(self) -> None:
         NotesMenu()
 
+class ChangeNotesMenu(General):
+# OPTIONS
 
-class ChangeNoteMenu(General):
-    # OPTIONS
     def __init__(self) -> None:
-        self.MENU_OPTIONS = {
-            '0': self.option_retun_to_notes_menu,
-            'exit': self.option_exit_from_cli,
+        self.PREMENU_OPTIONS = {
+        '0': self.option_retun_to_notes_menu,
+        'exit': self.option_exit_from_cli,
         }
+        self.MENU_OPTIONS = {
+
+        '1': self.option_change_tags,
+        '2': self.option_change_notes_text,
+        '3': self.option_delete_notes,
+        '0': self.option_retun_to_notes_menu,
+        'exit': self.option_exit_from_cli,
+
+        }
+        self.SUBMENU_OPTIONS = {
+        '0': self.option_retun_to_change_notes_menu,
+        'exit': self.option_exit_from_cli,
+        }
+        super().option_exit_from_cli
         super().options_handler
-        super().record_book_autosave
+        super().autosave
+        self.dict_of_notes = None
+        self.notes = None
         self.__call__()
 
     # MAIN CALL
     @error_handler
     def __call__(self) -> None:
+        if not notes_book.data:
+            print(ChangeNotesMenuText.empty_notes_book_message)
+            input(GeneralText.continue_input_message)
+            NotesMenu()
+        else:
+            while True:
+                self.get_notes_to_change()
+
+# GET NOTES TO CHANGE
+    @error_handler
+    def get_notes_to_change(self) -> None:
+        result = ''
+        print(ChangeNotesMenuText.premenu_options_message)
+        user_input = input(ChangeNotesMenuText.tags_input_message)
+        self.options_handler(user_input, self.PREMENU_OPTIONS)
+        self.dict_of_notes = notes_book.find_notes(user_input)
+        if self.dict_of_notes:
+            for indx, notes in self.dict_of_notes.items():
+                result += f"\nNotes: {indx}\nTags: {', '.join(notes['tags'])}\nText: {notes['notes']}\n"
+        if result:
+            while True:
+                print(result)
+                self.notes_choosing()
+        else:
+            print(ChangeNotesMenuText.no_matches_message)
+        
+    @error_handler
+    def notes_choosing(self) -> None:
+        user_input = input(ChangeNotesMenuText.notes_indx_input_message)
+        self.options_handler(user_input, self.PREMENU_OPTIONS)
+        self.notes = self.dict_of_notes[int(user_input.strip())]
+        self.tags = self.notes['tags']
+        self.change_notes_menu()
+
+# CHANGE NOTES MENU
+    @error_handler
+    def change_notes_menu(self) -> None:
         print(ChangeNotesMenuText.options_message)
+        print(self.notes.notes_info())
         while True:
-            pass
+            user_input = input(ChangeNotesMenuText.input_message)
+            self.options_handler(user_input, self.MENU_OPTIONS)
+            print(GeneralText.wrong_input_message)
+
+#CHANGE TAGS
+    @error_handler
+    def option_change_tags(self) -> None:
+        print(ChangeNotesMenuText.submenu_options_message)
+        while True:
+            self.change_tags_in_notes()
+
+    @error_handler
+    def change_tags_in_notes(self) -> None:
+        user_input = input(ChangeNotesMenuText.tags_input_message)
+        self.options_handler(user_input, self.SUBMENU_OPTIONS)
+        self.notes.add_tags(user_input)
+        self.notes.create_notes()
+        self.autosave()
+        self.change_notes_menu()
+
+# CHANGE TEXT OF NOTES
+    @error_handler
+    def option_change_notes_text(self) -> None:
+        print(ChangeNotesMenuText.submenu_options_message)
+        while True:
+            self.change_text_in_notes()
+
+    @error_handler
+    def change_text_in_notes(self) -> None:
+        user_input = input(ChangeNotesMenuText.text_input_message)
+        self.options_handler(user_input, self.SUBMENU_OPTIONS)        
+        self.notes.add_text(user_input)
+        self.notes.create_notes()
+        self.autosave()
+        self.change_notes_menu()
+    
+# DELETE NOTES
+    @error_handler
+    def option_delete_notes(self) -> None:
+        user_input = input(ChangeNotesMenuText.delete_input)
+        if user_input == 'y':
+            notes_book.delete_notes(self.notes)
+            self.autosave()
+            print(ChangeNotesMenuText.delete_successful_message)
+            input(GeneralText.continue_input_message)
+            NotesMenu()
+            
+# RETURN TO CHANGE NOTES MENU
+    def option_retun_to_change_notes_menu(self):
+        self.change_notes_menu()
+        
+# RETURN TO NOTES MENU
+    @error_handler
+    def option_retun_to_notes_menu(self) -> None:
+        NotesMenu()
+
+class ShowNotesMenu(General):
+# OPTIONS
+    def __init__(self) -> None:
+        self.MENU_OPTIONS = {
+        '1': self.option_find_record,            
+        '2': self.option_sort_a_z,
+        '3': self.option_sort_date,
+        '4': self.option_debug,
+        '0': self.option_retun_to_notes_menu,
+        'exit': self.option_exit_from_cli,
+        }
+        self.SUBMENU_OPTIONS = {
+        '0': self.option_return_to_show_notes_menu,
+        'exit': self.option_exit_from_cli,
+        }
+        super().option_exit_from_cli
+        super().options_handler
+        self.__call__()
+
+# MAIN CALL
+    @error_handler
+    def __call__(self) -> None:
+        if not notes_book.data:
+            print(ShowNotesMenuText.empty_notes_book_message)
+            input(GeneralText.continue_input_message)
+            NotesMenu()
+        else:
+            while True:
+                print(ShowNotesMenuText.options_message)
+                user_input = input(ShowNotesMenuText.input_message)
+                self.options_handler(user_input, self.MENU_OPTIONS)
+                print(GeneralText.wrong_input_message)
+
+# FIND RECORD
+    @error_handler
+    def option_find_record(self) -> None:
+        print(ShowNotesMenuText.submenu_options_message)
+        while True:
+            self.find_and_show_record()
+
+    @error_handler
+    def find_and_show_record(self) -> None:
+        result = ''
+        user_input = input(ShowNotesMenuText.search_input_message)
+        self.options_handler(user_input, self.SUBMENU_OPTIONS)
+        dict_of_notes = notes_book.find_notes(user_input)
+        if dict_of_notes:
+            for indx, notes in dict_of_notes.items():
+                result += f"\nNotes {indx}:\n {notes.show_notes()}\n"
+        if result:
+            print(result)
+            input(GeneralText.continue_input_message)
+            ShowNotesMenu()
+        print(ShowNotesMenuText.no_matches_message)
+
+# SHOW SORTED ALL BY A-Z
+    @error_handler
+    def option_sort_a_z(self) -> None:
+        print(notes_book.data)
+        input(GeneralText.continue_input_message)   
+        ShowNotesMenu()
+
+# SHOW SORTED ALL BY DATE
+    @error_handler
+    def option_sort_date(self) -> None:
+        input(GeneralText.continue_input_message)   
+        ShowNotesMenu()
+
+# DEBUG
+    @error_handler
+    def option_debug(self) -> None:
+        print(notes_book)
+        input(GeneralText.continue_input_message)
+        ShowNotesMenu()
+
+# RETURN TO SHOW RECORD MENU 
+    @error_handler
+    def option_return_to_show_notes_menu(self) -> None:
+        ShowNotesMenu()
 
     # RETURN TO NOTES MENU
     @error_handler
@@ -724,8 +976,7 @@ class ChangeNoteMenu(General):
         NotesMenu()
 
 
-records_book = General.create_or_restore_records_book(self=General)
-notes = General.create_or_restore_records_book(self=General)
+records_book, notes_book = General.create_or_restore_data(self=General)
 
 # def test_box() -> None:
 #     name_1 = Name('test')
