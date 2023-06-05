@@ -1,7 +1,7 @@
 # GOIT_PersonalAssistance
 
 ## by GoIT project-team-4 "PyCrafters"
-
+![PyCrafters](img/logo_PyCrafters.jpg)
 Team Leader: Heorhii
 Scrum-master: Heorhii
 Project mentor and Owner: Oleksii F.
