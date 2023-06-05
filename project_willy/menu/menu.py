@@ -8,7 +8,7 @@ from methods.file_operations_methods import FileOperations
 from methods.errors import ExitFromCLI
 from methods.errors_processing import error_handler
 
-from methods.clean_folder import main as clean_folder
+from methods.clean_folder import launch_script as clean_folder
 
 from text_fields.general_text import GeneralText
 from text_fields.main_menu_text import MainMenuText
