@@ -16,6 +16,10 @@ class FileOperations:
         with open(file_path, "wb") as fh:
             pickle.dump(some_data, fh)
 
+    def autosave_to_pickle(file_path, *args) -> None:
+        with open(file_path, "wb") as fh:
+            pickle.dump(args, fh)
+
     def import_from_pickle(file_path):
         with open(file_path, "rb") as fh:
             result = pickle.load(fh)
