@@ -1,5 +1,6 @@
 # GOIT_PersonalAssistance
-## ![Willy_personal_assistance](img/slide_1.jpg)
+##
+![Willy_personal_assistance](img/slide_1.jpg)
 ## About Willy
 ![Willy_about](img/slide_2.jpg)
 ## What can do Willy
