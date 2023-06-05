@@ -1,4 +1,3 @@
-
 from imports import os, Path, traceback, deepcopy
 
 from methods.records_book_methods import Name, Phone, Email, Birthday, Record, RecordsBook
@@ -14,6 +13,7 @@ from methods.clean_folder import launch_script as clean_folder
 
 from text_fields.general_text import GeneralText
 from text_fields.main_menu_text import MainMenuText
+
 from text_fields.records_book_menu_text import RecordsBookMenuText, AddRecordMenuText, ChangeRecordMenuText, ShowRecordsMenuText, ImportMenuText, ExportMenuText
 from text_fields.notes_menu_text import NotesMenuText, AddNotesMenuText, ChangeNotesMenuText, ShowNotesMenuText
 
@@ -42,26 +42,26 @@ class General:
     def autosave(self):
         self.file_operations.autosave_to_pickle(self.AUTOSAVE_PATH, records_book, notes_book)
 
-    @error_handler    
+    @error_handler
     def option_exit_from_cli(self) -> None:
         raise ExitFromCLI
 
 
 class MainMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
-        '1': self.option_records_book_menu,
-        '2': self.option_notes_menu,
-        '3': self.option_clean_folder_tool,
-        '0': self.option_show_current_call_stack,
-        'exit': self.option_exit_from_cli,
+            '1': self.option_records_book_menu,
+            '2': self.option_notes_menu,
+            '3': self.option_clean_folder_tool,
+            '0': self.option_show_current_call_stack,
+            'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
         super().options_handler
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         print(MainMenuText.options_message)
@@ -70,23 +70,23 @@ class MainMenu(General):
             self.options_handler(user_input, self.MENU_OPTIONS)
             print(GeneralText.wrong_input_message)
 
-# RECORDS BOOK
+    # RECORDS BOOK
     @error_handler
     def option_records_book_menu(self) -> None:
-       RecordsBookMenu()
-        
-# NOTES MENU
+        RecordsBookMenu()
+
+    # NOTES MENU
     @error_handler
     def option_notes_menu(self) -> None:
         NotesMenu()
 
-#CLEAN FOLDER TOOL
+    # CLEAN FOLDER TOOL
     def option_clean_folder_tool(self) -> None:
         clean_folder()
         input(GeneralText.continue_input_message)
         MainMenu()
 
-# SHOW CURRENT CALL STACK
+    # SHOW CURRENT CALL STACK
     @error_handler
     def option_show_current_call_stack(self) -> None:
         for line in traceback.format_stack():
@@ -95,25 +95,26 @@ class MainMenu(General):
         input(GeneralText.continue_input_message)
         MainMenu()
 
+
 # RECORDS BOOK MENU
 class RecordsBookMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
-        '1': self.option_add_record,
-        '2': self.option_change_record,
-        '3': self.option_show_records,
-        '4': self.option_import,
-        '5': self.option_export,
-        '6': self.option_clear_records_book,
-        '0': self.option_return_to_main_menu,
-        'exit': self.option_exit_from_cli,
+            '1': self.option_add_record,
+            '2': self.option_change_record,
+            '3': self.option_show_records,
+            '4': self.option_import,
+            '5': self.option_export,
+            '6': self.option_clear_records_book,
+            '0': self.option_return_to_main_menu,
+            'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
         super().options_handler
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         print(RecordsBookMenuText.options_message)
@@ -122,32 +123,32 @@ class RecordsBookMenu(General):
             self.options_handler(user_input, self.MENU_OPTIONS)
             print(GeneralText.wrong_input_message)
 
-# ADD RECORD
+    # ADD RECORD
     @error_handler
     def option_add_record(self) -> None:
         AddRecordMenu()
 
-# CHANGE RECORD
+    # CHANGE RECORD
     @error_handler
     def option_change_record(self) -> None:
         ChangeRecordMenu()
 
-# SHOW RECORDS
+    # SHOW RECORDS
     @error_handler
     def option_show_records(self) -> None:
         ShowRecordsMenu()
 
-# IMPORT
+    # IMPORT
     @error_handler
     def option_import(self) -> None:
         ImportMenu()
 
-# EXPORT
+    # EXPORT
     @error_handler
     def option_export(self) -> None:
         ExportMenu()
 
-# CLEAR RECORDS BOOK
+    # CLEAR RECORDS BOOK
     @error_handler
     def option_clear_records_book(self) -> None:
         user_input = input(RecordsBookMenuText.clear_input)
@@ -157,18 +158,18 @@ class RecordsBookMenu(General):
             input(GeneralText.continue_input_message)
             RecordsBookMenu()
 
-# RETURN MAIN MENU
+    # RETURN MAIN MENU
     @error_handler
     def option_return_to_main_menu(self) -> None:
         MainMenu()
 
 
 class AddRecordMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
-        '0': self.option_return_to_records_book_menu,
-        'exit': self.option_exit_from_cli,
+            '0': self.option_return_to_records_book_menu,
+            'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
         super().options_handler
@@ -176,7 +177,7 @@ class AddRecordMenu(General):
         self.record = Record()
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         print(AddRecordMenuText.options_message)
@@ -197,7 +198,7 @@ class AddRecordMenu(General):
                 input(GeneralText.continue_input_message)
                 MainMenu()
 
-# ADD FIELDS TO NEW RECORD
+    # ADD FIELDS TO NEW RECORD
     @error_handler
     def add_name_to_record(self) -> None:
         user_input = input(AddRecordMenuText.name_input_message)
@@ -226,32 +227,32 @@ class AddRecordMenu(General):
         self.options_handler(user_input, self.MENU_OPTIONS)
         self.record.add_birthday(Birthday(user_input))
 
-# RETURN TO MAIN MENU
+    # RETURN TO MAIN MENU
     @error_handler
     def option_return_to_records_book_menu(self) -> None:
         RecordsBookMenu()
 
 
 class ChangeRecordMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.PREMENU_OPTIONS = {
-        '0': self.option_return_to_main_menu,
-        'exit': self.option_exit_from_cli,
+            '0': self.option_return_to_main_menu,
+            'exit': self.option_exit_from_cli,
         }
         self.MENU_OPTIONS = {
-        '1': self.option_change_name,
-        '2': self.option_change_phone,
-        '3': self.option_change_email,
-        '4': self.option_change_birthday,
-        '5': self.option_get_another_record,
-        '6': self.option_delete_record,
-        '0': self.option_return_to_records_book_menu,
-        'exit': self.option_exit_from_cli,
+            '1': self.option_change_name,
+            '2': self.option_change_phone,
+            '3': self.option_change_email,
+            '4': self.option_change_birthday,
+            '5': self.option_get_another_record,
+            '6': self.option_delete_record,
+            '0': self.option_return_to_records_book_menu,
+            'exit': self.option_exit_from_cli,
         }
         self.SUBMENU_OPTIONS = {
-        '0': self.option_return_to_change_record_menu,
-        'exit': self.option_exit_from_cli,
+            '0': self.option_return_to_change_record_menu,
+            'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
         super().autosave
@@ -259,7 +260,7 @@ class ChangeRecordMenu(General):
         self.record = None
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         if not records_book.data:
@@ -271,7 +272,7 @@ class ChangeRecordMenu(General):
             while True:
                 self.get_record_to_change()
 
-# GET RECORD
+    # GET RECORD
     @error_handler
     def get_record_to_change(self) -> None:
         user_input = input(ChangeRecordMenuText.record_input_message)
@@ -279,7 +280,7 @@ class ChangeRecordMenu(General):
         self.record = records_book.get_record(Name(user_input))
         self.change_record_menu()
 
-# CHANGE RECORD MENU
+    # CHANGE RECORD MENU
     @error_handler
     def change_record_menu(self) -> None:
         print(ChangeRecordMenuText.options_message)
@@ -289,7 +290,7 @@ class ChangeRecordMenu(General):
             self.options_handler(user_input, self.MENU_OPTIONS)
             print(GeneralText.wrong_input_message)
 
-#CHANGE NAME
+    # CHANGE NAME
     @error_handler
     def option_change_name(self) -> None:
         print(ChangeRecordMenuText.submenu_options_message)
@@ -309,7 +310,7 @@ class ChangeRecordMenu(General):
         input(GeneralText.continue_input_message)
         self.change_record_menu()
 
-# CHANGE PHONE
+    # CHANGE PHONE
     @error_handler
     def option_change_phone(self) -> None:
         print(ChangeRecordMenuText.submenu_options_message)
@@ -319,15 +320,15 @@ class ChangeRecordMenu(General):
     @error_handler
     def change_phone_in_record(self) -> None:
         user_input = input(ChangeRecordMenuText.phone_input_message)
-        self.options_handler(user_input, self.SUBMENU_OPTIONS)        
+        self.options_handler(user_input, self.SUBMENU_OPTIONS)
         self.record.add_phone(Phone(user_input))
         records_book.add_record(self.record)
         self.autosave()
         print(ChangeRecordMenuText.change_successful_message)
         input(GeneralText.continue_input_message)
-        self.change_record_menu()        
+        self.change_record_menu()
 
-# CHANGE EMAIL
+    # CHANGE EMAIL
     @error_handler
     def option_change_email(self) -> None:
         print(ChangeRecordMenuText.submenu_options_message)
@@ -344,14 +345,14 @@ class ChangeRecordMenu(General):
         print(ChangeRecordMenuText.change_successful_message)
         input(GeneralText.continue_input_message)
         self.change_record_menu()
-    
-# CHANGE BIRTHDAY
-    @error_handler 
+
+    # CHANGE BIRTHDAY
+    @error_handler
     def option_change_birthday(self) -> None:
         print(ChangeRecordMenuText.submenu_options_message)
         while True:
             self.change_birthday_in_record()
-    
+
     @error_handler
     def change_birthday_in_record(self) -> None:
         user_input = input(ChangeRecordMenuText.birthday_input_message)
@@ -362,14 +363,14 @@ class ChangeRecordMenu(General):
         print(ChangeRecordMenuText.change_successful_message)
         input(GeneralText.continue_input_message)
         self.change_record_menu()
-    
-# GET ANOTHER RECORD
+
+    # GET ANOTHER RECORD
     @error_handler
     def option_get_another_record(self) -> None:
         while True:
             self.get_record_to_change()
 
-# DELETE RECORD
+    # DELETE RECORD
     @error_handler
     def option_delete_record(self) -> None:
         user_input = input(ChangeRecordMenuText.delete_input)
@@ -380,43 +381,43 @@ class ChangeRecordMenu(General):
             input(GeneralText.continue_input_message)
             RecordsBookMenu()
 
-# RETURN TO MAIN MENU
+    # RETURN TO MAIN MENU
     @error_handler
     def option_return_to_main_menu(self) -> None:
         MainMenu()
 
-# RETURN TO RECORDS BOOK MENU
+    # RETURN TO RECORDS BOOK MENU
     @error_handler
     def option_return_to_records_book_menu(self) -> None:
         RecordsBookMenu()
 
-# RETURN TO CHANGE RECORD MENU
+    # RETURN TO CHANGE RECORD MENU
     @error_handler
     def option_return_to_change_record_menu(self) -> None:
         self.change_record_menu()
 
 
 class ShowRecordsMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
-        '1': self.option_find_record,            
-        '2': self.option_show_record,
-        '3': self.option_show_all,
-        '4': self.option_debug,
-        '0': self.option_return_to_records_book_menu,
-        'exit': self.option_exit_from_cli,
+            '1': self.option_find_record,
+            '2': self.option_show_record,
+            '3': self.option_show_all,
+            '4': self.option_debug,
+            '0': self.option_return_to_records_book_menu,
+            'exit': self.option_exit_from_cli,
         }
         self.SUBMENU_OPTIONS = {
-        '0': self.option_return_to_show_record_menu,
-        'exit': self.option_exit_from_cli,
+            '0': self.option_return_to_show_record_menu,
+            'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
         super().options_handler
         self.record = None
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         if not records_book.data:
@@ -430,7 +431,7 @@ class ShowRecordsMenu(General):
                 self.options_handler(user_input, self.MENU_OPTIONS)
                 print(GeneralText.wrong_input_message)
 
-# FIND RECORD
+    # FIND RECORD
     @error_handler
     def option_find_record(self) -> None:
         print(ShowRecordsMenuText.submenu_options_message)
@@ -449,13 +450,13 @@ class ShowRecordsMenu(General):
             ShowRecordsMenu()
         print(ShowRecordsMenuText.no_matches_message)
 
-# SHOW RECORD
+    # SHOW RECORD
     @error_handler
     def option_show_record(self) -> None:
         print(ShowRecordsMenuText.submenu_options_message)
         while True:
             self.get_and_show_record()
-    
+
     @error_handler
     def get_and_show_record(self) -> None:
         user_input = input(ShowRecordsMenuText.record_input_message)
@@ -465,44 +466,44 @@ class ShowRecordsMenu(General):
         input(GeneralText.continue_input_message)
         ShowRecordsMenu()
 
-# SHOW ALL
+    # SHOW ALL
     @error_handler
     def option_show_all(self) -> None:
         print(records_book.show_records())
-        input(GeneralText.continue_input_message)   
+        input(GeneralText.continue_input_message)
         ShowRecordsMenu()
 
-# DEBUG
+    # DEBUG
     @error_handler
     def option_debug(self) -> None:
         print(records_book.data)
         input(GeneralText.continue_input_message)
         ShowRecordsMenu()
 
-# RETURN TO SHOW RECORD MENU 
+    # RETURN TO SHOW RECORD MENU
     @error_handler
     def option_return_to_show_record_menu(self) -> None:
         ShowRecordsMenu()
 
-# RETURN TO RECORDS BOOK MENU
+    # RETURN TO RECORDS BOOK MENU
     @error_handler
     def option_return_to_records_book_menu(self) -> None:
         RecordsBookMenu()
 
 
 class ImportMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
-        '0': self.option_return_to_records_book_menu,
-        'exit': self.option_exit_from_cli,
+            '0': self.option_return_to_records_book_menu,
+            'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
         super().options_handler
         super().file_operations
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         print(ImportMenuText.options_message)
@@ -523,33 +524,33 @@ class ImportMenu(General):
                 input(GeneralText.continue_input_message)
                 RecordsBookMenu()
 
-# RETURN TO RECORDS BOOK MENU
+    # RETURN TO RECORDS BOOK MENU
     @error_handler
     def option_return_to_records_book_menu(self) -> None:
         RecordsBookMenu()
 
 
 class ExportMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.EXPORT_MENU_OPTIONS = {
-        '1': self.option_export_txt,
-        '2': self.option_export_pickle,
-        '3': self.option_export_json,
-        '4': self.option_export_csv,
-        '0': self.option_return_to_records_book_menu,        
-        'exit': self.option_exit_from_cli,
+            '1': self.option_export_txt,
+            '2': self.option_export_pickle,
+            '3': self.option_export_json,
+            '4': self.option_export_csv,
+            '0': self.option_return_to_records_book_menu,
+            'exit': self.option_exit_from_cli,
         }
         self.SUBMENU_OPTIONS = {
-        '0': self.option_return_to_export_menu,
-        'exit': self.option_exit_from_cli,
+            '0': self.option_return_to_export_menu,
+            'exit': self.option_exit_from_cli,
         }
         super().option_exit_from_cli
         super().options_handler
         super().file_operations
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         if not records_book.data:
@@ -563,7 +564,7 @@ class ExportMenu(General):
                 self.options_handler(user_input, self.EXPORT_MENU_OPTIONS)
                 print(GeneralText.wrong_input_message)
 
-# EXPORT TO TXT
+    # EXPORT TO TXT
     @error_handler
     def option_export_txt(self) -> None:
         print(ExportMenuText.submenu_options_message)
@@ -577,14 +578,14 @@ class ExportMenu(General):
         if path_from_user == '':
             path_for_export = Path(os.getcwd()) / 'records_book.txt'
         else:
-            path_for_export = Path(path_from_user+'.txt')
+            path_for_export = Path(path_from_user + '.txt')
         records_book_as_dict = records_book.convert_to_dict()
         self.file_operations.export_to_txt(path_for_export, records_book_as_dict)
         print(ExportMenuText.records_book_successful_message)
         input(GeneralText.continue_input_message)
         RecordsBookMenu()
 
-# EXPORT TO PICKLE
+    # EXPORT TO PICKLE
     @error_handler
     def option_export_pickle(self) -> None:
         print(ExportMenuText.submenu_options_message)
@@ -599,12 +600,13 @@ class ExportMenu(General):
             path_for_export = Path(os.getcwd()) / 'records_book.bin'
         else:
             path_for_export = Path(path_from_user+'.bin')
+
         self.file_operations.export_to_pickle(path_for_export, records_book)
         print(ExportMenuText.records_book_successful_message)
         input(GeneralText.continue_input_message)
         RecordsBookMenu()
 
-# EXPORT TO JSON
+    # EXPORT TO JSON
     @error_handler
     def option_export_json(self) -> None:
         print(ExportMenuText.submenu_options_message)
@@ -613,45 +615,45 @@ class ExportMenu(General):
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
             self.records_book_to_json(user_input)
 
-    @error_handler   
-    def records_book_to_json(self, path_from_user: str) -> None: #TODO
+    @error_handler
+    def records_book_to_json(self, path_from_user: str) -> None:  # TODO
         if path_from_user == '':
             path_for_export = Path(os.getcwd()) / 'records_book.json'
         else:
-            path_for_export = Path(path_from_user+'.json')
+            path_for_export = Path(path_from_user + '.json')
         records_book_as_dict = records_book.convert_to_dict()
         self.file_operations.export_to_json(path_for_export, records_book_as_dict)
         print(ExportMenuText.records_book_successful_message)
         input(GeneralText.continue_input_message)
         RecordsBookMenu()
 
-# EXPORT TO CSV
+    # EXPORT TO CSV
     @error_handler
     def option_export_csv(self) -> None:
-        print(ExportMenuText.submenu_options_message)        
+        print(ExportMenuText.submenu_options_message)
         while True:
             user_input = input(ExportMenuText.csv_path_input_message)
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
             self.records_book_to_csv(user_input)
 
     @error_handler
-    def records_book_to_csv(self, path_from_user: str) -> None: #TODO
+    def records_book_to_csv(self, path_from_user: str) -> None:  # TODO
         if path_from_user == '':
             path_for_export = Path(os.getcwd()) / 'records_book.csv'
         else:
-            path_for_export = Path(path_from_user+'.csv')
+            path_for_export = Path(path_from_user + '.csv')
         list_of_records = records_book.convert_record_to_list()
         self.file_operations.export_to_csv(path_for_export, list_of_records)
         print(ExportMenuText.records_book_successful_message)
         input(GeneralText.continue_input_message)
         RecordsBookMenu()
 
-# RETURN TO EXPORT OPTIONS
+    # RETURN TO EXPORT OPTIONS
     @error_handler
     def option_return_to_export_menu(self) -> None:
         ExportMenu()
 
-# RETURN TO RECORDS BOOK MENU
+    # RETURN TO RECORDS BOOK MENU
     @error_handler
     def option_return_to_records_book_menu(self) -> None:
         RecordsBookMenu()
@@ -660,24 +662,27 @@ class ExportMenu(General):
 # NOTES MENU
 
 class NotesMenu(General):
-# OPTIONS
+    # OPTIONS
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
+
         '1': self.option_add_new_notes,
         '2': self.option_change_notes,
         '3': self.option_show_notes,
         '4': self.option_clear_notes_book,
         '0': self.option_return_to_main_menu,
         'exit': self.option_exit_from_cli,
+
         }
         super().option_exit_from_cli
         super().options_handler
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         print(NotesMenuText.options_message)
+
         while True:
             user_input = input(NotesMenuText.input_message)
             self.options_handler(user_input, self.MENU_OPTIONS)
@@ -688,7 +693,7 @@ class NotesMenu(General):
         
     def option_change_notes(self) -> None:
         ChangeNotesMenu()
-        
+
     def option_show_notes(self) -> None:
         ShowNotesMenu()
 
@@ -713,6 +718,7 @@ class AddNotesMenu(General):
         self.MENU_OPTIONS = {
         '0': self.option_retun_to_notes_menu,
         'exit': self.option_exit_from_cli,
+
         }
         super().option_exit_from_cli
         super().options_handler
@@ -720,7 +726,7 @@ class AddNotesMenu(General):
         self.notes = Notes()
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         print(AddNotesMenuText.options_message)
@@ -750,24 +756,27 @@ class AddNotesMenu(General):
         self.options_handler(user_input, self.MENU_OPTIONS)
         self.notes.add_text(user_input)
 
-# RETURN TO NOTES MENU
+    # RETURN TO NOTES MENU
     @error_handler
     def option_retun_to_notes_menu(self) -> None:
         NotesMenu()
 
 class ChangeNotesMenu(General):
 # OPTIONS
+
     def __init__(self) -> None:
         self.PREMENU_OPTIONS = {
         '0': self.option_retun_to_notes_menu,
         'exit': self.option_exit_from_cli,
         }
         self.MENU_OPTIONS = {
+
         '1': self.option_change_tags,
         '2': self.option_change_notes_text,
         '3': self.option_delete_notes,
         '0': self.option_retun_to_notes_menu,
         'exit': self.option_exit_from_cli,
+
         }
         self.SUBMENU_OPTIONS = {
         '0': self.option_retun_to_change_notes_menu,
@@ -780,7 +789,7 @@ class ChangeNotesMenu(General):
         self.notes = None
         self.__call__()
 
-# MAIN CALL
+    # MAIN CALL
     @error_handler
     def __call__(self) -> None:
         if not notes_book.data:
@@ -847,6 +856,7 @@ class ChangeNotesMenu(General):
     @error_handler
     def option_change_notes_text(self) -> None:
         print(ChangeNotesMenuText.submenu_options_message)
+
         while True:
             self.change_text_in_notes()
 
@@ -983,11 +993,53 @@ class ShowNotesMenu(General):
     def option_return_to_show_notes_menu(self) -> None:
         ShowNotesMenu()
 
+    @error_handler
+    def change_text_in_notes(self) -> None:
+        user_input = input(ChangeNotesMenuText.text_input_message)
+        self.options_handler(user_input, self.SUBMENU_OPTIONS)        
+        self.notes.add_text(user_input)
+        self.notes.create_notes()
+        self.autosave()
+        self.change_notes_menu()
+    
+# DELETE NOTES
+    @error_handler
+    def option_delete_notes(self) -> None:
+        user_input = input(ChangeNotesMenuText.delete_input)
+        if user_input == 'y':
+            notes_book.delete_notes(self.notes)
+            self.autosave()
+            print(ChangeNotesMenuText.delete_successful_message)
+            input(GeneralText.continue_input_message)
+            NotesMenu()
+            
+# RETURN TO CHANGE NOTES MENU
+    def option_retun_to_change_notes_menu(self):
+        self.change_notes_menu()
+        
 # RETURN TO NOTES MENU
     @error_handler
     def option_retun_to_notes_menu(self) -> None:
         NotesMenu()
 
+class ShowNotesMenu(General):
+# OPTIONS
+    def __init__(self) -> None:
+        self.MENU_OPTIONS = {
+        '1': self.option_find_record,            
+        '2': self.option_sort_a_z,
+        '3': self.option_sort_date,
+        '4': self.option_debug,
+        '0': self.option_retun_to_notes_menu,
+        'exit': self.option_exit_from_cli,
+        }
+        self.SUBMENU_OPTIONS = {
+        '0': self.option_return_to_show_notes_menu,
+        'exit': self.option_exit_from_cli,
+        }
+        super().option_exit_from_cli
+        super().options_handler
+        self.__call__()
 
 records_book, notes_book = General.create_or_restore_data(self=General)
 
@@ -1015,19 +1067,19 @@ records_book, notes_book = General.create_or_restore_data(self=General)
 #     email_3 = Email('example@email.net')
 #     email_4 = Email('example@email.net')
 #     email_5 = Email(None)
-    
+
 #     record_1 = Record(name_1, phone_1, email_1, birthday_1)
-    
+
 #     record_1.add_phone(phone_3)
 #     record_1.add_phone(phone_4)
 #     record_1.add_phone(phone_5)
-    
+
 #     record_2 = Record(name_2, phone_2, email_2, birthday_2)
 #     record_3 = Record(name_3, phone_3, email_3, birthday_3)
 #     record_4 = Record(name_4, phone_4, email_4, birthday_4)
 #     record_5 = Record(name_5, phone_5, email_5, birthday_5)
-    
-    
+
+
 #     records_book.add_record(record_1)
 #     records_book.add_record(record_2)
 #     records_book.add_record(record_3)

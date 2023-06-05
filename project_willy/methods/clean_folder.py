@@ -1,5 +1,4 @@
 from pathlib import Path
-import sys
 import re
 import shutil
 import os
@@ -78,7 +77,8 @@ def move_to_directory(file: Path, directory_name: str) -> None:
 
 
 def launch_script():
-    path = input('\nPut the path to the folder, please.\n>>> ')
+    path = input(
+        '\nPut the path to the folder, please. [FULL path required]\nExample: C:\\Users\\Default\\Your_Folder\n>>> ')
     path = Path(path)
     if path.is_file():
         raise IndexError
