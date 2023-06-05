@@ -79,7 +79,7 @@ class NotesBook(UserList):
         # Збираємо та сортуємо всі наявні дати
         sorted_dates = sorted([note['date_of_change'] for note in self.data])
 
-        # Ітеруємось по списку та повертаємо словник із нотатками, відсортованих по датах
+        # Ітеруємось по списку та повертаємо словник із нотатками, відсортованих по даті
         for note_date in sorted_dates:
             for note in self.data:
                 if note_date == note['date_of_change']:

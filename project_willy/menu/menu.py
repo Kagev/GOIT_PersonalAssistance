@@ -950,7 +950,7 @@ class ShowNotesMenu(General):
         dict_of_notes = notes_book.sort_by_tag()
         if dict_of_notes:
             for indx, notes in dict_of_notes.items():
-                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків
+                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків!
         if result:
             print(result)
             input(GeneralText.continue_input_message)
@@ -964,7 +964,7 @@ class ShowNotesMenu(General):
         dict_of_notes = notes_book.sort_by_date()
         if dict_of_notes:
             for indx, notes in dict_of_notes.items():
-                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків
+                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків!
         if result:
             print(result)
             input(GeneralText.continue_input_message)
