@@ -919,6 +919,15 @@ class ShowNotesMenu(General):
         while True:
             self.find_and_show_record()
 
+    # @error_handler
+    # def find_and_show_record(self, user_input) -> str:
+    #     result = ''
+    #     dict_of_notes = NOTES_BOOK.find_notes(user_input)
+    #     if dict_of_notes:
+    #         for indx, notes in dict_of_notes.items():
+    #             result += f"\nNotes {indx}:\n{notes}\n"
+    #         return result
+    # print(ShowNotesMenuText.no_matches_message)
     @error_handler
     def find_and_show_record(self) -> None:
         result = ''
@@ -927,7 +936,7 @@ class ShowNotesMenu(General):
         dict_of_notes = notes_book.find_notes(user_input)
         if dict_of_notes:
             for indx, notes in dict_of_notes.items():
-                result += f"\nNotes {indx}:\n {notes.show_notes()}\n"
+                result += f"\nNotes {indx}:\n {notes}\n"
         if result:
             print(result)
             input(GeneralText.continue_input_message)
@@ -937,15 +946,30 @@ class ShowNotesMenu(General):
 # SHOW SORTED ALL BY A-Z
     @error_handler
     def option_sort_a_z(self) -> None:
-        print(notes_book.data)
-        input(GeneralText.continue_input_message)   
-        ShowNotesMenu()
+        result = ''
+        dict_of_notes = notes_book.sort_by_tag()
+        if dict_of_notes:
+            for indx, notes in dict_of_notes.items():
+                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків
+        if result:
+            print(result)
+            input(GeneralText.continue_input_message)
+            ShowNotesMenu()
+        print(ShowNotesMenuText.no_matches_message)
 
 # SHOW SORTED ALL BY DATE
     @error_handler
     def option_sort_date(self) -> None:
-        input(GeneralText.continue_input_message)   
-        ShowNotesMenu()
+        result = ''
+        dict_of_notes = notes_book.sort_by_date()
+        if dict_of_notes:
+            for indx, notes in dict_of_notes.items():
+                result += f"\nNotes {indx}:\n {notes}\n" # TODO: налаштувати коректне виведення нотатків
+        if result:
+            print(result)
+            input(GeneralText.continue_input_message)
+            ShowNotesMenu()
+        print(ShowNotesMenuText.no_matches_message)
 
 # DEBUG
     @error_handler
