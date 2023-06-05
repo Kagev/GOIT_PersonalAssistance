@@ -14,4 +14,9 @@
 ![Willi_04](img/slide_6.jpg)
 ## Contacts
 ![PyCrafters_contacts](img/slide_8.jpg)
+## Install
+pip install
+command install
+command install
+
 ![PyCrafters](img/logo_PyCrafters.jpg)
