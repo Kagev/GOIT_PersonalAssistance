@@ -19,4 +19,3 @@ pip install
 command install
 command install
 
-![PyCrafters](img/logo_PyCrafters.jpg)
