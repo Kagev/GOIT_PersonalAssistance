@@ -1,4 +1,4 @@
-# GOIT_PersonalAssistance
+# GoIT PythonCore 13 project 
 ##
 ![Willy_personal_assistance](img/slide_1.jpg)
 ## About Willy
