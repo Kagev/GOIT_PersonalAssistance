@@ -13,14 +13,11 @@
 ## The Third
 ![Willy_03](img/slide_6.jpg)
 ## The Fourth
-<<<<<<< HEAD
 ![Willy_04](img/slide_7.jpg)
 ## The Fifth
 ![Willy_05](img/slide_8.jpg)
 ## Developer
 ![Willy_developers](img/slide_9.jpg)
-=======
-![Willy_02](img/slide_7.jpg)
 ## The Fifth
 ![Willy_03](img/slide_8.jpg)
 ## Developer
