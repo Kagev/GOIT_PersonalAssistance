@@ -24,7 +24,6 @@ class Notes(UserDict):
         '{:<} {:<}\n'.format('Tags:', tags)+\
         '\n{:<} {:<}\n'.format('Text:', text)
         return result
-    
     def add_tags(self, user_input: str) -> None:
         if user_input.strip():
             new_tags = user_input.strip().split()
@@ -76,7 +75,11 @@ class NotesBook(UserList):
         if result.values():
             return result
 
+<<<<<<< HEAD
     def sort_by_date(self) -> dict:
+=======
+    def sort_by_date(self):
+>>>>>>> develop
         result = {}
         index = 1
 
@@ -91,7 +94,11 @@ class NotesBook(UserList):
                     index += 1
         return result
 
+<<<<<<< HEAD
     def sort_by_tag(self) -> dict:
+=======
+    def sort_by_tag(self):
+>>>>>>> develop
         list_of_tags = []
         result = {}
         index = 1
@@ -116,4 +123,7 @@ class NotesBook(UserList):
                     result.update({index: note})
                     index += 1
         return result
+<<<<<<< HEAD
     
+=======
+>>>>>>> develop

@@ -1,8 +1,5 @@
-from pathlib import Path
-import re
-import shutil
-import os
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 from methods.imports import os, re, shutil, Path
 
@@ -12,88 +9,163 @@ parse_list = {'documents': [], 'video': [],
               'audio': [], 'images': [], 'archives': [], None: []}
 extentions = {'identified': [], 'unidentified': []}
 >>>>>>> 25c36582f03868f37a2a32503320ede73564f9e2
+=======
+from methods.imports import os, re, shutil, Path
+
+# ----------SETTINGS----------
+>>>>>>> b29803a459e4ce5804c4a6a39ec6079718b7733e
 
 
-def parse_files(path: Path) -> None:
-    global parse_list
-    global extentions
-    DIRECTORIES = ('documents', 'video', 'audio', 'images', 'archives')
-    for file in path.iterdir():
-        if file.is_file():
-            name, file_extension, status = identify_file(file)
-            parse_list[name].append(file.name)
-            extentions[status].append(file_extension)
-        elif file.is_dir():
-            if file.name.lower() in DIRECTORIES:
-                continue
-            elif not os.listdir(file):
-                os.rmdir(file)
-                continue
-            else:
-                parse_files(normilize(file))
+IMAGES = ['JPEG', 'PNG', 'JPG', 'SVG']
+VIDEO = ['AVI', 'MP4', 'MOV', 'MKV']
+DOCUMENTS = ['DOC', 'DOCX', 'TXT', 'PDF', 'XLSX', 'PPTX']
+AUDIO = ['MP3', 'OGG', 'WAV', 'AMR']
+ARCHIVES = ['ZIP', 'TAR']
+FOLDERS = ['IMAGES', 'VIDEO', 'DOCUMENTS', 'AUDIO', 'ARCHIVES']
 
 
-def identify_file(file: Path) -> tuple:
-    POSSIBLE_EXTENTIONS = {
-        'documents': ('.doc', '.docx', '.txt', '.pdf', '.xlsx', '.pptx'),
-        'video': ('.avi', '.mp4', '.mov', '.mkv'),
-        'audio': ('.mp3', '.ogg', '.wav', '.amr'),
-        'images': ('.jpeg', '.png', '.jpg', '.svg'),
-        'archives': ('.zip', '.gz', '.tar')
-    }
-    file_extension = file.suffix.lower()
-    for name, extensions in POSSIBLE_EXTENTIONS.items():
-        for extension in extensions:
-            if file_extension == extension:
-                move_to_directory(normilize(file), name)
-                return name, file_extension, 'identified'
-    return None, file_extension, 'unidentified'
+# ----------METAGRAPHY----------
 
 
-def normilize(file: Path) -> Path:
-    CYRILLIC_SYMBOLS = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяєіїґ"
-    TRANSLATION = (
-        "a", "b", "v", "g", "d", "e", "e", "j", "z", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s",
-        "t", "u", "f", "h", "ts", "ch", "sh", "sch", "", "y", "", "e", "yu", "ya", "je", "i", "ji", "g"
-    )
-    map = {}
-    for c, l in zip(CYRILLIC_SYMBOLS, TRANSLATION):
-        map[ord(c)] = l
-        map[ord(c.upper())] = l.upper()
-    edited_file_name = file.name.replace(file.suffix, '')
-    edited_file_name = edited_file_name.translate(map)
-    edited_file_name = re.sub(r'[^a-zA-Z0-9_]', '_', edited_file_name)
-    return file.rename(str(file).replace(file.name, f'{edited_file_name}{file.suffix}'))
+CYRILLIC_SYMBOLS = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяєіїґ"
+TRANSLATION = ("a", "b", "v", "g", "d", "e", "e", "j", "z", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u",
+               "f", "h", "ts", "ch", "sh", "sch", "", "y", "", "e", "yu", "ya", "je", "i", "ji", "g")
+MAP = {}
 
 
-def move_to_directory(file: Path, directory_name: str) -> None:
-    directory_path = Path(str(file).replace(file.name, directory_name))
-    archive_path = directory_path / file.name.replace(file.suffix, '')
-    try:
-        os.mkdir(directory_path)
-        if file.suffix in ('.zip', '.gz', '.tar'):
-            os.mkdir(archive_path)
-    except FileExistsError:
-        None
-    finally:
-        if file.suffix in ('.zip', '.gz', '.tar'):
-            shutil.unpack_archive(file, archive_path)
+for c, l in zip(CYRILLIC_SYMBOLS, TRANSLATION):
+    MAP.update({ord(c): l, ord(c.upper()): l.upper()})
+
+
+# ----------TOOLS----------
+
+
+path_folders = []
+path_files = []
+
+
+def get_extension(file: str) -> str:
+        match = re.search(r'\.\w{1,2}\w{1,2}$', file)
+        if match:
+            return match[0][1:]
         else:
-            shutil.move(file, directory_path)
+            return None
+        
+
+def get_name(file: str) -> str:
+    return re.sub(r'\.\w{3,4}$', '', file)
 
 
-def launch_script():
-    path = input(
-        '\nPut the path to the folder, please. [FULL path required]\nExample: C:\\Users\\Default\\Your_Folder\n>>> ')
-    path = Path(path)
-    if path.is_file():
-        raise IndexError
-    elif path.is_dir():
-        parse_files(path)
-        print(
-            f'\n| IDENTIFIED: {set(extentions["identified"])} |')
-        print(
-            f'| UNIDENTIFIED: {set(extentions["unidentified"])} |')
-        print('\n{:^40}\n'.format('---SUCCESSFULL---'))
+def normalize(file: str) -> str:
+    if get_extension(file):
+        file_new_name = re.sub(r'\W', '_', get_name(file).translate(MAP))
+        return f"{file_new_name}.{get_extension(file)}"
     else:
-        raise IndexError
+        return re.sub(r'\W', '_', get_name(file).translate(MAP))
+
+
+def scan(folder: Path) -> None:
+    for item in folder.iterdir():
+        if item.is_dir():
+            if item.name not in FOLDERS:
+                path_folders.append(item)
+                scan(item)
+            else:
+                continue
+        else:
+            path_files.append(item)
+
+
+def handle_file(file_path: Path, target_folder: Path) -> None:
+    target_folder.mkdir(exist_ok=True, parents=True)
+    file_path.replace(target_folder / normalize(file_path.name))
+
+
+def handle_archive(file_path: Path, target_folder: Path) -> None:
+    target_folder.mkdir(exist_ok=True, parents=True)
+    path_to_unpack = target_folder / normalize(get_name(file_path.name)) / get_extension(file_path.name)
+    try:
+        shutil.unpack_archive(file_path, path_to_unpack)
+    except shutil.ReadError:
+       print('Unpack error')
+    file_path.unlink()
+
+
+def handle_folder(folder: Path) -> None:
+    if not os.listdir(folder):
+        try:
+            folder.rmdir()
+        except OSError:
+            print(f'{folder} removing error')
+    else:
+        os.rename(folder, Path(str(folder).translate(MAP)))
+
+
+# ----------MAIN----------
+
+archives = []
+audio = []
+documents = []
+images = []
+video = []
+other = []
+extensions = set()
+unknown_extensions = set()
+
+def clean(work_folder: Path) -> None:
+    scan(work_folder)
+    for file in path_files:
+        if get_extension(file.name):
+            if get_extension(file.name).upper() in ARCHIVES:
+                extensions.add(get_extension(file.name))
+                archives.append(file.name)
+                handle_archive(file, work_folder / 'Sorted' / 'ARCHIVES')
+
+            elif get_extension(file.name).upper() in AUDIO:
+                extensions.add(get_extension(file.name))
+                audio.append(file.name)
+                handle_file(file, work_folder / 'Sorted' / 'AUDIO')
+
+            elif get_extension(file.name).upper() in DOCUMENTS:
+                extensions.add(get_extension(file.name))
+                documents.append(file.name)
+                handle_file(file, work_folder / 'Sorted' / 'DOCUMENTS') 
+
+            elif get_extension(file.name).upper() in IMAGES:
+                extensions.add(get_extension(file.name))
+                images.append(file.name)
+                handle_file(file, work_folder / 'Sorted' / 'IMAGES') 
+
+            elif get_extension(file.name).upper() in VIDEO:
+                extensions.add(get_extension(file.name))
+                video.append(file.name)
+                handle_file(file, work_folder / 'Sorted' / 'VIDEO') 
+
+            else:
+                unknown_extensions.add(get_extension(file.name))
+        else:
+            continue
+    
+    for folder in path_folders:
+            handle_folder(folder)
+    
+    print('-' * 50)
+    print(f'ARCHIVES {archives}')
+    print('-' * 50)
+    print(f'AUDIO {audio}')
+    print('-' * 50)
+    print(f'DOCUMENTS {documents}')
+    print('-' * 50)
+    print(f'IMAGES {images}')
+    print('-' * 50)
+    print(f'VIDEO {video}')
+    print('-' * 50)
+    print(f'REGISTER_EXTENTIONS {extensions}')
+    print('-' * 50)
+    print(f'UNKNOWN_EXTENSIONS {unknown_extensions}')
+    print('-' * 50)
+
+def main() -> None:
+    while True:
+        user_input = input()
+        
