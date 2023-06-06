@@ -33,6 +33,7 @@ class RecordsBookMenu(General):
     def __call__(self) -> None:
         while True:
             print(RecordsBookMenuText.options_message)
+            print(RECORDS_BOOK.records_calculatig())
             user_input = input(RecordsBookMenuText.input_message)
             if not self.options_handler(user_input, self.MENU_OPTIONS):
                 print(GeneralText.wrong_input_message)

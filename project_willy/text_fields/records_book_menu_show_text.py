@@ -11,7 +11,7 @@ class ShowRecordsMenuText:
     
     submenu_options_message = \
     '\n{:^40}\n{:^40}\n'.format('---SHOW RECORDS SUBMENU---', '-'*40)+\
-    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO CHANGE RECORD MENU', '-'*40)+\
+    '|{:^38}|\n{:^40}\n'.format('0. RETURN TO SHOW RECORDS MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
     
     input_message = 'You are in "SHOW RECORDS MENU". Choose one of the options.\n>>> '

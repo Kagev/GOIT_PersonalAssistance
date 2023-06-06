@@ -10,7 +10,6 @@ class ChangeRecordMenuText:
     '|{:^38}|\n{:^40}\n'.format('6. DELETE RECORD', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('0. RETURN TO RECORDS BOOK MENU', '-'*40)+\
     '|{:^38}|\n{:^40}\n'.format('EXIT', '-'*40)
-
     empty_records_book_message = '\nRecord book is empty. Nothing to change.\n'
     record_not_exists_message = "\nRecord do not exists. First create record\n"
     input_message = 'You are in "CHANGE RECORD MENU". What do you want to change?\n>>> '
@@ -20,7 +19,9 @@ class ChangeRecordMenuText:
     phone_input_message = 'Input new or additional phone for user.\n>>> '
     email_input_message = 'Input new email for user.\n>>> '
     birthday_input_message = 'Input new birthday date for user.\n>>> '
+    
     change_successful_message = '\nRecord has been successfully changed.\n'
+    
     delete_input = 'Are you sure? Enter "y" to continue.\n>>> '
     delete_successful_message = '\nRecord has been successfully deleted.\n'
     

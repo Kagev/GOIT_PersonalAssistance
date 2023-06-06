@@ -29,6 +29,7 @@ class NotesMenu(General):
     def __call__(self) -> None:
         while True:
             print(NotesMenuText.options_message)
+            print(NOTES_BOOK.notes_calculatig())
             user_input = input(NotesMenuText.input_message)
             if not self.options_handler(user_input, self.MENU_OPTIONS):
                 print(GeneralText.wrong_input_message)
