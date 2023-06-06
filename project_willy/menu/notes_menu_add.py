@@ -38,7 +38,7 @@ class AddNotesMenu(General):
                 autosave()
                 print(AddNotesMenuText.add_successful_message)
                 input(GeneralText.continue_input_message)
-                return #to notes menu
+                return # to previous menu
 
 # ADD FILEDS TO NOTES    
     @error_handler

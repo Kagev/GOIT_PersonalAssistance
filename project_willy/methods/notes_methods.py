@@ -75,6 +75,7 @@ class NotesBook(UserList):
         if result.values():
             return result
 
+    # SORT BY DATE
     def sort_by_date(self) -> dict:
         result = {}
         index = 1
@@ -90,6 +91,7 @@ class NotesBook(UserList):
                     index += 1
         return result
 
+    # SORT BY TAGS
     def sort_by_tag(self) -> dict:
         list_of_tags = []
         result = {}
@@ -115,3 +117,8 @@ class NotesBook(UserList):
                     result.update({index: note})
                     index += 1
         return result
+
+# NOTES CALCULATING
+    def notes_calculatig(self) -> str:
+        return f'Number of notes in the book: {len(self.data)}\n'
+    
