@@ -12,10 +12,14 @@
 ![Willy_02](img/slide_5.jpg)
 ## The Third
 ![Willy_03](img/slide_6.jpg)
+## The Fourth
+![Willy_02](img/slide_5.jpg)
+## The Fifth
+![Willy_03](img/slide_6.jpg)
 ## Developer
-![Willy_04](img/slide_7.jpg)
+![Willy_04](img/slide_9.jpg)
 ## Contacts
-![PyCrafters_contacts](img/slide_8.jpg)
+![PyCrafters_contacts](img/slide_10.jpg)
 ## Install
 pip install
 command install
