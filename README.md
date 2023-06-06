@@ -13,11 +13,11 @@
 ## The Third
 ![Willy_03](img/slide_6.jpg)
 ## The Fourth
-![Willy_02](img/slide_7.jpg)
+![Willy_04](img/slide_7.jpg)
 ## The Fifth
-![Willy_03](img/slide_8.jpg)
+![Willy_05](img/slide_8.jpg)
 ## Developer
-![Willy_04](img/slide_9.jpg)
+![Willy_developers](img/slide_9.jpg)
 ## Contacts
 ![PyCrafters_contacts](img/slide_10.jpg)
 ## Install
