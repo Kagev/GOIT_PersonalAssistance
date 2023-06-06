@@ -1,4 +1,5 @@
-from imports import UserList, UserDict, datetime
+
+from methods.imports import UserList, UserDict, datetime
 from methods.errors import NotesError
 
 class Notes(UserDict):
@@ -10,9 +11,19 @@ class Notes(UserDict):
             'date_of_change': None
         }
 
-    def str(self) -> str:
-        return f"Tags: {', '.join(self.data['tags'])}\nText: {self.data['notes']}\n"
-
+    def __str__(self) -> str:
+        if self.data['tags']:
+            tags = ', '.join(self.data['tags'])
+        else:
+            tags = 'empty'
+        if self.data['notes']:
+            text = self.data['notes']
+        else:
+            text = 'empty'        
+        result = \
+        '{:<} {:<}\n'.format('Tags:', tags)+\
+        '\n{:<} {:<}\n'.format('Text:', text)
+        return result
     def add_tags(self, user_input: str) -> None:
         if user_input.strip():
             new_tags = user_input.strip().split()
@@ -36,16 +47,8 @@ class Notes(UserDict):
             self.data['date_of_change'] = datetime.now()
 
     def notes_info(self) -> str:
-        result = 'Notes:\n\n'
-        if self.data['tags'] != None:
-            result += f"Tags: {', '.join(self.data['tags'])}\n"
-        else:
-            result += 'tags: empty\n'
-        if self.data['notes'] != None:
-            result += f"Text: {self.data['notes']}\n"
-        else:
-            result += 'Text: empty\n'
-        return result
+        return f'\nNotes:\n\n{self}'
+
 
 class NotesBook(UserList):
     def __init__(self) -> None:
@@ -72,7 +75,11 @@ class NotesBook(UserList):
         if result.values():
             return result
 
+<<<<<<< HEAD
+    def sort_by_date(self) -> dict:
+=======
     def sort_by_date(self):
+>>>>>>> develop
         result = {}
         index = 1
 
@@ -87,7 +94,11 @@ class NotesBook(UserList):
                     index += 1
         return result
 
+<<<<<<< HEAD
+    def sort_by_tag(self) -> dict:
+=======
     def sort_by_tag(self):
+>>>>>>> develop
         list_of_tags = []
         result = {}
         index = 1
@@ -112,3 +123,7 @@ class NotesBook(UserList):
                     result.update({index: note})
                     index += 1
         return result
+<<<<<<< HEAD
+    
+=======
+>>>>>>> develop

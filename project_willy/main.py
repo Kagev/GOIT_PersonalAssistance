@@ -1,21 +1,13 @@
-from menu.menu import MainMenu
+
+from menu.main_menu import MainMenu
 from text_fields.general_text import GeneralText
 
 
 # ----------ENTER TO MAIN MENU----------
 def main() -> None:
-    
     print(GeneralText.start_message)
-    
-    while True:
-        user_input = input(GeneralText.start_input_message)
-        if user_input in GeneralText.EXIT:
-            print(GeneralText.exit_message)
-            return
-        elif user_input in GeneralText.START:
-            MainMenu()
-        else:
-            print(GeneralText.wrong_input_message)
+    input(GeneralText.continue_input_message)
+    MainMenu()
 
 
 # ----------ENTRY POINT----------
