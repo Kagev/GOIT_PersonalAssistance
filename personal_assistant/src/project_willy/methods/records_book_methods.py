@@ -198,7 +198,10 @@ class Record:
         result = None
         current_date = datetime.now()
         if isinstance(birthday, datetime):
-            current_year_birthday = datetime(year=current_date.year, month=birthday.month, day=birthday.day+1)
+            try:
+                current_year_birthday = datetime(year=current_date.year, month=birthday.month, day=birthday.day+1)
+            except ValueError:
+                current_year_birthday = datetime(year=current_date.year, month=3, day=1)
             if current_year_birthday < current_date:
                 next_year_birthday = datetime(year=current_date.year+1, month=birthday.month, day=birthday.day)
                 result = next_year_birthday - current_date

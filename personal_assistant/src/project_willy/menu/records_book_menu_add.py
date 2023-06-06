@@ -45,7 +45,7 @@ class AddRecordMenu(General):
                 autosave()
                 print(AddRecordMenuText.add_successful_message)
                 input(GeneralText.continue_input_message)
-                return # to records book menu
+                return # to previous menu
 
 # ADD FIELDS TO NEW RECORD
     @error_handler
