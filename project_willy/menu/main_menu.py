@@ -2,7 +2,7 @@
 from methods.imports import traceback
 from methods.menu_general_methods import General
 from methods.errors_processing import error_handler
-from methods.clean_folder import main as clean_folder
+from methods.clean_folder import launch_script as clean_folder
 
 from text_fields.main_menu_text import MainMenuText
 from text_fields.general_text import GeneralText
