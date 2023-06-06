@@ -1,5 +1,5 @@
 
-from imports import re, datetime, UserDict
+from methods.imports import re, datetime, UserDict
 
 from methods.errors import NameError, PhoneError, EmailError, BirthdayError
 
@@ -433,3 +433,7 @@ class RecordsBook(UserDict):
         for indx, record in enumerate(self.data.values()):
             result.append([indx+1]+record.record_to_list())
         return result
+
+# RECORDS CALCULATING
+    def records_calculatig(self) -> str:
+        return f'Number of records in the book: {len(self.data)}\n'

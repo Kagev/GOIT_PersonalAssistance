@@ -1,4 +1,6 @@
 
+class Return(Exception):
+    pass
 class ExitFromCLI(Exception):
     pass
 class NameError(Exception):
@@ -8,4 +10,6 @@ class PhoneError(Exception):
 class EmailError(Exception):
     pass
 class BirthdayError(Exception):
+    pass
+class NotesError(Exception):
     pass

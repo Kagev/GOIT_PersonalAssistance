@@ -1,7 +1,11 @@
 
-from imports import pickle, json, csv
+from methods.imports import os, Path
+
+from methods.imports import pickle, json, csv
 
 class FileOperations:
+
+    AUTOSAVE_PATH = Path(os.getcwd()) / 'willy_autosave.bin'
 
 # TXT
     def export_to_txt(file_path, some_dict: dict) -> None:
@@ -15,6 +19,10 @@ class FileOperations:
     def export_to_pickle(file_path, some_data) -> None:
         with open(file_path, "wb") as fh:
             pickle.dump(some_data, fh)
+
+    def autosave_to_pickle(file_path, *args) -> None:
+        with open(file_path, "wb") as fh:
+            pickle.dump(args, fh)
 
     def import_from_pickle(file_path):
         with open(file_path, "rb") as fh:
