@@ -29,7 +29,7 @@ class ImportMenu(General):
             user_input = input(ImportMenuText.input_message)
             self.options_handler(user_input, self.MENU_OPTIONS)
             if self.import_records_book_from_pickle(user_input):
-                return # to records book menu
+                return # to previous menu
 
     @error_handler
     def import_records_book_from_pickle(self, path_from_user: str) -> None:

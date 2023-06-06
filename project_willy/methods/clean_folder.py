@@ -2,8 +2,7 @@
 from methods.imports import Path, re, os, shutil
 
 
-parse_list = {'documents': [], 'video': [],
-              'audio': [], 'images': [], 'archives': [], None: []}
+parse_list = {'documents': [], 'video': [], 'audio': [], 'images': [], 'archives': [], None: []}
 extentions = {'identified': [], 'unidentified': []}
 
 

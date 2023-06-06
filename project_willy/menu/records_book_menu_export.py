@@ -34,7 +34,7 @@ class ExportMenu(General):
         if not RECORDS_BOOK.data:
             print(ExportMenuText.empty_records_book_message)
             input(GeneralText.continue_input_message)
-            return # to records book menu
+            return # to previous menu
         else:
             while True:
                 print(ExportMenuText.options_message)
@@ -50,7 +50,7 @@ class ExportMenu(General):
             user_input = input(ExportMenuText.txt_path_input_message)
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
             if self.records_book_to_txt(user_input):
-                return # to export menu
+                return # to main call
 
     @error_handler
     def records_book_to_txt(self, path_from_user: str) -> None:
@@ -72,7 +72,7 @@ class ExportMenu(General):
             user_input = input(ExportMenuText.pickle_path_input_message)
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
             if self.records_book_to_pickle(user_input):
-                return # to export menu
+                return # to main call
 
     @error_handler
     def records_book_to_pickle(self, path_from_user: str) -> None:
@@ -93,7 +93,7 @@ class ExportMenu(General):
             user_input = input(ExportMenuText.json_path_input_message)
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
             if self.records_book_to_json(user_input):
-                return # to export menu
+                return # to main call
 
     @error_handler   
     def records_book_to_json(self, path_from_user: str) -> None: #TODO
@@ -115,7 +115,7 @@ class ExportMenu(General):
             user_input = input(ExportMenuText.csv_path_input_message)
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
             if self.records_book_to_csv(user_input):
-                return # to export menu
+                return # to main call
 
     @error_handler
     def records_book_to_csv(self, path_from_user: str) -> None: #TODO

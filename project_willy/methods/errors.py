@@ -1,4 +1,6 @@
 
+# CUSTOM ERRORS
+
 class Return(Exception):
     pass
 class ExitFromCLI(Exception):

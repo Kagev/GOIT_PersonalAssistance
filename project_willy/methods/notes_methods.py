@@ -24,6 +24,8 @@ class Notes(UserDict):
         '{:<} {:<}\n'.format('Tags:', tags)+\
         '\n{:<} {:<}\n'.format('Text:', text)
         return result
+    
+# ADD TAGS TO NOTES
     def add_tags(self, user_input: str) -> None:
         if user_input.strip():
             new_tags = user_input.strip().split()
@@ -36,16 +38,19 @@ class Notes(UserDict):
         else:
             raise NotesError
 
+# ADD TEXT TO NOTES
     def add_text(self, user_input: str) -> None:
         text = user_input.strip()
         if len(text) > 300:
             raise NotesError
         self.data['notes'] = text
 
+# CREATE OR CHANGING NOTES
     def create_notes(self) -> None:
         if self.data['tags'] != None and self.data['notes'] != None:
             self.data['date_of_change'] = datetime.now()
 
+# NOTES INFO
     def notes_info(self) -> str:
         return f'\nNotes:\n\n{self}'
 
@@ -54,15 +59,19 @@ class NotesBook(UserList):
     def __init__(self) -> None:
         UserList.__init__(self)
 
+# ADD NOTES
     def add_notes(self, notes: Notes) -> None:
         self.data.append(notes)
 
+# DELETE NOTES
     def delete_notes(self, notes: Notes)-> None:
         self.data.remove(notes)
 
+# CLEAD NOTES BOOK
     def clear(self) -> None:
         self.data.clear()
 
+# FIND NOTES
     def find_notes(self, user_input: str) -> dict:
         result = {}
         count = 1
@@ -75,7 +84,7 @@ class NotesBook(UserList):
         if result.values():
             return result
 
-    # SORT BY DATE
+# SORT NOTES BY DATE
     def sort_by_date(self) -> dict:
         result = {}
         index = 1
@@ -91,7 +100,7 @@ class NotesBook(UserList):
                     index += 1
         return result
 
-    # SORT BY TAGS
+# SORT NOTES BY TAGS
     def sort_by_tag(self) -> dict:
         list_of_tags = []
         result = {}

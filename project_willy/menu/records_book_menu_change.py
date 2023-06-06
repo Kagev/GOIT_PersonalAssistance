@@ -36,7 +36,7 @@ class ChangeRecordMenu(General):
         if not RECORDS_BOOK.data:
             print(ChangeRecordMenuText.empty_records_book_message)
             input(GeneralText.continue_input_message)
-            return # to records book menu
+            return # to previous menu
         else:
             while True:
                 if not self.record:

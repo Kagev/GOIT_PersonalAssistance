@@ -127,6 +127,7 @@ class ChangeNotesMenu(General):
         user_input = input(ChangeNotesMenuText.delete_input)
         if user_input == 'y':
             NOTES_BOOK.delete_notes(self.notes)
+            self.notes = None
             autosave()
             print(ChangeNotesMenuText.delete_successful_message)
             input(GeneralText.continue_input_message)

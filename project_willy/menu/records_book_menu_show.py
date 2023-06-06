@@ -3,6 +3,7 @@ from methods.data import RECORDS_BOOK
 from methods.records_book_methods import Name
 from methods.menu_general_methods import General
 from methods.errors_processing import error_handler
+from methods.birthdays_check import main as birthdays_check
 
 from text_fields.general_text import GeneralText
 from text_fields.records_book_menu_show_text import ShowRecordsMenuText
@@ -13,7 +14,7 @@ class ShowRecordsMenu(General):
     def __init__(self) -> None:
         self.MENU_OPTIONS = {
         '1': self.option_find_record,            
-        '2': self.option_show_record,
+        '2': self.option_get_and_show_birthdays,
         '3': self.option_show_all,
         '4': self.option_debug,
         '0': self.option_return_to_previous,
@@ -32,7 +33,7 @@ class ShowRecordsMenu(General):
         if not RECORDS_BOOK.data:
             print(ShowRecordsMenuText.empty_records_book_message)
             input(GeneralText.continue_input_message)
-            return # to record book menu
+            return # to main call
         else:
             while True:
                 print(ShowRecordsMenuText.options_message)
@@ -48,7 +49,7 @@ class ShowRecordsMenu(General):
             user_input = input(ShowRecordsMenuText.search_input_message)
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
             if self.find_and_show_record(user_input):
-                return # to show records menu
+                return # to main call
 
     @error_handler
     def find_and_show_record(self, user_input) -> None:
@@ -60,20 +61,26 @@ class ShowRecordsMenu(General):
 
 # SHOW RECORD
     @error_handler
-    def option_show_record(self) -> None:
-        print(ShowRecordsMenuText.submenu_options_message)
+    def option_get_and_show_birthdays(self) -> None:
         while True:
-            user_input = input(ShowRecordsMenuText.record_input_message)
+            print(ShowRecordsMenuText.submenu_options_message)
+            user_input = input(ShowRecordsMenuText.days_input_message)
             self.options_handler(user_input, self.SUBMENU_OPTIONS)
-            if self.get_and_show_record(user_input):
-                return # to show records menu
-    
+            records = self.get_birthdays(user_input)
+            if records:
+                print(records)
+                input(GeneralText.continue_input_message)
+                return # to main call
+
     @error_handler
-    def get_and_show_record(self, user_input) -> None:
-        self.record = RECORDS_BOOK.get_record(Name(user_input))
-        print(self.record.show_record())
-        input(GeneralText.continue_input_message)
-        return True
+    def get_birthdays(self, user_input: str) -> str:
+        result = ''
+        for record in RECORDS_BOOK.data.values():
+            if birthdays_check(int(user_input), record.birthday.value):
+                result += f'{record.show_record()}{ShowRecordsMenuText.birthday_info}'
+        if result:
+            return result
+        print(ShowRecordsMenuText.no_matches_message)
 
 # SHOW ALL
     @error_handler
