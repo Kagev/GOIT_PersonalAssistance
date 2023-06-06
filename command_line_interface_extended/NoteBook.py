@@ -25,13 +25,3 @@ class NotesBook(UserList):
                 search_note += record['notes'] + '\n'
 
         return search_note
-
-a = Note()
-a.add_tag('as sd df')
-a.add_note('asdffrfdsf')
-
-
-c = NotesBook()
-c.add_record(a)
-c.search_note_by_tag('as')
-print(c)
