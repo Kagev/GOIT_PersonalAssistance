@@ -13,9 +13,9 @@
 ## The Third
 ![Willy_03](img/slide_6.jpg)
 ## The Fourth
-![Willy_02](img/slide_5.jpg)
+![Willy_02](img/slide_7.jpg)
 ## The Fifth
-![Willy_03](img/slide_6.jpg)
+![Willy_03](img/slide_8.jpg)
 ## Developer
 ![Willy_04](img/slide_9.jpg)
 ## Contacts
