@@ -1,5 +1,5 @@
 
-from imports import re, datetime, UserDict
+from methods.imports import re, datetime, UserDict
 
 from methods.errors import NameError, PhoneError, EmailError, BirthdayError
 

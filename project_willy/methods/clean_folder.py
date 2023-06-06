@@ -1,5 +1,5 @@
 
-from imports import os, re, shutil, Path
+from methods.imports import os, re, shutil, Path
 
 # ----------SETTINGS----------
 

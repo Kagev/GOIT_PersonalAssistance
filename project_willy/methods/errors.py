@@ -1,4 +1,6 @@
 
+class Return(Exception):
+    pass
 class ExitFromCLI(Exception):
     pass
 class NameError(Exception):

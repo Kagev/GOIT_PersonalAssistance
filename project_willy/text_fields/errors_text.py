@@ -1,5 +1,6 @@
 
 class ErrorsText:
+
     index_error_message = '\nSomething wrong, try again. [IndexError]\n'
     key_error_message = "\nI don't know what is this, sorry. [KeyError]\n"
     type_error_message = '\nSomething wrong, try again. [TypeError]\n'
