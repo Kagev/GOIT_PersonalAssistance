@@ -22,7 +22,6 @@
 ![Willy_03](img/slide_8.jpg)
 ## Developer
 ![Willy_04](img/slide_9.jpg)
->>>>>>> origin
 ## Contacts
 ![PyCrafters_contacts](img/slide_10.jpg)
 ## Install
