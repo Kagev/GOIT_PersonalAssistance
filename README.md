@@ -21,6 +21,12 @@
 ## Contacts
 ![PyCrafters_contacts](img/slide_10.jpg)
 ## Install
-'''pip install'''
-'''command install'''
-'''command install'''
+```
+pip install
+```
+```
+command install
+```
+```
+command install
+```
