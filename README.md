@@ -54,17 +54,22 @@ pip install -i https://test.pypi.org/simple/ Willy
 pip3 install -i https://test.pypi.org/simple/ Willy
 ```
 
+## Install Python-package
+
+```
+pip install -i https://test.pypi.org/simple/ Willy
+```
+
+або
+
+```
+pip3 install -i https://test.pypi.org/simple/ Willy
+```
+
 ## Run Willy
 
-в терміналі перейти в директорію ***.../project_willy***
-та запустити файл main.py:
+в терміналі виконайте команду:
 
 ```
-python main.py
-```
-
-або якщо не спрацювала команда, спробувати:
-
-```
-python3 main.py
+willy
 ```
