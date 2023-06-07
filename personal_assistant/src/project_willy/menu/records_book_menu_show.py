@@ -1,12 +1,12 @@
 
-from methods.data import RECORDS_BOOK
-from methods.records_book_methods import Name
-from methods.menu_general_methods import General
-from methods.errors_processing import error_handler
-from methods.birthdays_check import main as birthdays_check
+from project_willy.methods.data import RECORDS_BOOK
+from project_willy.methods.records_book_methods import Name
+from project_willy.methods.menu_general_methods import General
+from project_willy.methods.errors_processing import error_handler
+from project_willy.methods.birthdays_check import main as birthdays_check
 
-from text_fields.general_text import GeneralText
-from text_fields.records_book_menu_show_text import ShowRecordsMenuText
+from project_willy.text_fields.general_text import GeneralText
+from project_willy.text_fields.records_book_menu_show_text import ShowRecordsMenuText
 
 
 class ShowRecordsMenu(General):

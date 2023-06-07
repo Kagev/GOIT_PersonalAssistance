@@ -1,15 +1,15 @@
 
-from methods.data import RECORDS_BOOK, autosave
+from project_willy.methods.data import RECORDS_BOOK, autosave
 
-from methods.imports import Path
+from project_willy.methods.imports import Path
 
-from methods.records_book_methods import RecordsBook
-from methods.file_operations_methods import FileOperations
-from methods.menu_general_methods import General
-from methods.errors_processing import error_handler
+from project_willy.methods.records_book_methods import RecordsBook
+from project_willy.methods.file_operations_methods import FileOperations
+from project_willy.methods.menu_general_methods import General
+from project_willy.methods.errors_processing import error_handler
 
-from text_fields.general_text import GeneralText
-from text_fields.records_book_menu_import_text import ImportMenuText
+from project_willy.text_fields.general_text import GeneralText
+from project_willy.text_fields.records_book_menu_import_text import ImportMenuText
 
 
 class ImportMenu(General):

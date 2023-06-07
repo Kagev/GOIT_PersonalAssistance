@@ -1,11 +1,11 @@
 
-from methods.data import RECORDS_BOOK, autosave
-from methods.records_book_methods import Record, Name, Phone, Email, Birthday
-from methods.menu_general_methods import General
-from methods.errors_processing import error_handler
+from project_willy.methods.data import RECORDS_BOOK, autosave
+from project_willy.methods.records_book_methods import Record, Name, Phone, Email, Birthday
+from project_willy.methods.menu_general_methods import General
+from project_willy.methods.errors_processing import error_handler
 
-from text_fields.records_book_menu_add_text import AddRecordMenuText
-from text_fields.general_text import GeneralText
+from project_willy.text_fields.records_book_menu_add_text import AddRecordMenuText
+from project_willy.text_fields.general_text import GeneralText
 
 
 class AddRecordMenu(General):

@@ -1,7 +1,7 @@
 
-from methods.imports import sys
-from methods.errors import Return, ExitFromCLI, NameError, PhoneError, EmailError, BirthdayError, NotesError
-from text_fields.errors_text import ErrorsText
+from project_willy.methods.imports import sys
+from project_willy.methods.errors import Return, ExitFromCLI, NameError, PhoneError, EmailError, BirthdayError, NotesError
+from project_willy.text_fields.errors_text import ErrorsText
 
 # ERRORS HANDLER
 def error_handler(func) -> str:

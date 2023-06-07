@@ -1,10 +1,10 @@
 
-from methods.data import NOTES_BOOK
-from methods.errors_processing import error_handler
-from methods.menu_general_methods import General
+from project_willy.methods.data import NOTES_BOOK
+from project_willy.methods.errors_processing import error_handler
+from project_willy.methods.menu_general_methods import General
 
-from text_fields.notes_menu_show_text import ShowNotesMenuText
-from text_fields.general_text import GeneralText
+from project_willy.text_fields.notes_menu_show_text import ShowNotesMenuText
+from project_willy.text_fields.general_text import GeneralText
 
 
 class ShowNotesMenu(General):

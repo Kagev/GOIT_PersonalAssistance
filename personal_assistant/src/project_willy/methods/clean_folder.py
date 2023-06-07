@@ -1,5 +1,5 @@
 
-from methods.imports import Path, re, os, shutil
+from project_willy.methods.imports import Path, re, os, shutil
 
 
 parse_list = {'documents': [], 'video': [], 'audio': [], 'images': [], 'archives': [], None: []}

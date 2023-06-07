@@ -1,11 +1,11 @@
 
-from methods.data import NOTES_BOOK, autosave
-from methods.notes_methods import Notes
-from methods.menu_general_methods import General
-from methods.errors_processing import error_handler
+from project_willy.methods.data import NOTES_BOOK, autosave
+from project_willy.methods.notes_methods import Notes
+from project_willy.methods.menu_general_methods import General
+from project_willy.methods.errors_processing import error_handler
 
-from text_fields.notes_menu_add_text import AddNotesMenuText
-from text_fields.general_text import GeneralText
+from project_willy.text_fields.notes_menu_add_text import AddNotesMenuText
+from project_willy.text_fields.general_text import GeneralText
 
 
 class AddNotesMenu(General):

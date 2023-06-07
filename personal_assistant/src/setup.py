@@ -1,8 +1,11 @@
 from setuptools import setup, find_namespace_packages, find_packages
 
+import json
+import os
+
 setup(
     name='Willy',
-    version='v0.9.7',
+    version='v1.0.10',
     description='Personal Assistant Willy',
     url='https://github.com/Kagev/GOIT_PersonalAssistance',
     author='PyCrafters',
@@ -13,6 +16,8 @@ setup(
                 "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
                 "Operating System :: OS Independent",
                 ],
-    entry_points={'willy': ['willy = project_willy.main']
+    entry_points={
+        'console_scripts':
+            ['willy = project_willy.main:main']
                   }
 )

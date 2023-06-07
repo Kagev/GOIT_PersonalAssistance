@@ -1,9 +1,9 @@
 
-from methods.imports import re, datetime, UserDict
+from project_willy.methods.imports import re, datetime, UserDict
 
-from methods.errors import NameError, PhoneError, EmailError, BirthdayError
+from project_willy.methods.errors import NameError, PhoneError, EmailError, BirthdayError
 
-from text_fields.methods_text import MethodsText
+from project_willy.text_fields.methods_text import MethodsText
 
 class Field:
     def __init__(self, value) -> None:
