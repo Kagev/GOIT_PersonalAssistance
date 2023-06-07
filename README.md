@@ -22,14 +22,9 @@
 ![PyCrafters_contacts](img/slide_10.jpg)
 ## Install Python-package
 ```
-pip install
+pip install -i https://test.pypi.org/simple/ Willy
 ```
-```
-command install
-```
-```
-command install
-```
+
 ## Run Willy
 в терміналі перейти в директорію  .../personal_assistant/src/project_willy
 та запустити файл main.py:
