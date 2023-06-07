@@ -1,14 +1,14 @@
 
-from methods.data import RECORDS_BOOK
+from project_willy.methods.data import RECORDS_BOOK
 
-from methods.imports import Path, os
+from project_willy.methods.imports import Path, os
 
-from methods.menu_general_methods import General
-from methods.file_operations_methods import FileOperations
-from methods.errors_processing import error_handler
+from project_willy.methods.menu_general_methods import General
+from project_willy.methods.file_operations_methods import FileOperations
+from project_willy.methods.errors_processing import error_handler
 
-from text_fields.general_text import GeneralText
-from text_fields.records_book_menu_export_text import ExportMenuText
+from project_willy.text_fields.general_text import GeneralText
+from project_willy.text_fields.records_book_menu_export_text import ExportMenuText
 
 
 class ExportMenu(General):

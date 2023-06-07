@@ -1,14 +1,15 @@
 
-from methods.imports import traceback
-from methods.menu_general_methods import General
-from methods.errors_processing import error_handler
-from methods.clean_folder import launch_script as clean_folder
+from project_willy.methods.imports import traceback
+from project_willy.methods.menu_general_methods import General
+from project_willy.methods.errors_processing import error_handler
+from project_willy.methods.clean_folder import launch_script as clean_folder
 
-from text_fields.main_menu_text import MainMenuText
-from text_fields.general_text import GeneralText
+from project_willy.text_fields.main_menu_text import MainMenuText
+from project_willy.text_fields.general_text import GeneralText
 
-from menu.records_book_menu_main import RecordsBookMenu
-from menu.notes_menu_main import NotesMenu
+from project_willy.menu.records_book_menu_main import RecordsBookMenu
+from project_willy.menu.notes_menu_main import NotesMenu
+
 
 
 class MainMenu(General):

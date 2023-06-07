@@ -1,7 +1,7 @@
 
-from methods.imports import os, Path
+from project_willy.methods.imports import os, Path
 
-from methods.imports import pickle, json, csv
+from project_willy.methods.imports import pickle, json, csv
 
 class FileOperations:
 

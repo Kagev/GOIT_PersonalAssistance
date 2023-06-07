@@ -1,6 +1,6 @@
 
-from methods.imports import UserList, UserDict, datetime
-from methods.errors import NotesError
+from project_willy.methods.imports import UserList, UserDict, datetime
+from project_willy.methods.errors import NotesError
 
 class Notes(UserDict):
     def __init__(self) -> None:

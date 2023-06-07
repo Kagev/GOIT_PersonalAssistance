@@ -1,7 +1,7 @@
 
-from methods.file_operations_methods import FileOperations
-from methods.records_book_methods import RecordsBook
-from methods.notes_methods import NotesBook
+from project_willy.methods.file_operations_methods import FileOperations
+from project_willy.methods.records_book_methods import RecordsBook
+from project_willy.methods.notes_methods import NotesBook
 
 # RECORDS BOOK
 def create_or_restore_records_book() -> RecordsBook:

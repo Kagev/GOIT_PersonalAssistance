@@ -1,16 +1,16 @@
 
-from methods.data import RECORDS_BOOK, autosave
-from methods.menu_general_methods import General
-from methods.errors_processing import error_handler
+from project_willy.methods.data import RECORDS_BOOK, autosave
+from project_willy.methods.menu_general_methods import General
+from project_willy.methods.errors_processing import error_handler
 
-from menu.records_book_menu_add import AddRecordMenu
-from menu.records_book_menu_change import ChangeRecordMenu
-from menu.records_book_menu_show import ShowRecordsMenu
-from menu.records_book_menu_import import ImportMenu
-from menu.records_book_menu_export import ExportMenu
+from project_willy.menu.records_book_menu_add import AddRecordMenu
+from project_willy.menu.records_book_menu_change import ChangeRecordMenu
+from project_willy.menu.records_book_menu_show import ShowRecordsMenu
+from project_willy.menu.records_book_menu_import import ImportMenu
+from project_willy.menu.records_book_menu_export import ExportMenu
 
-from text_fields.records_book_menu_main_text import RecordsBookMenuText
-from text_fields.general_text import GeneralText
+from project_willy.text_fields.records_book_menu_main_text import RecordsBookMenuText
+from project_willy.text_fields.general_text import GeneralText
 
 
 class RecordsBookMenu(General):

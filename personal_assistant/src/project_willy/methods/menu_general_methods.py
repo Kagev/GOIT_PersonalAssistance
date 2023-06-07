@@ -1,5 +1,5 @@
 
-from methods.errors import Return, ExitFromCLI
+from project_willy.methods.errors import Return, ExitFromCLI
 
 class General:
 # OPTIONS HANDLER FOR MENU
