@@ -20,7 +20,7 @@
 ![Willy_developers](img/slide_9.jpg)
 ## Contacts
 ![PyCrafters_contacts](img/slide_10.jpg)
-## Install
+## Install Python-package
 ```
 pip install
 ```
@@ -29,4 +29,14 @@ command install
 ```
 ```
 command install
+```
+## Run Willy
+в терміналі перейти в директорію  .../personal_assistant/src/project_willy
+та запустити файл main.py:
+```
+python main.py
+```
+або якщо не спрацювала команда, спробувати:
+```
+python3 main.py
 ```
