@@ -24,6 +24,10 @@
 ```
 pip install -i https://test.pypi.org/simple/ Willy
 ```
+або
+```
+pip3 install -i https://test.pypi.org/simple/ Willy
+```
 
 ## Run Willy
 в терміналі перейти в директорію  .../personal_assistant/src/project_willy
