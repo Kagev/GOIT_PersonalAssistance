@@ -89,13 +89,10 @@ This Python program is a personal assistant with the following capabilities: sto
     Цей Readme.md файл є загальним описом програми "Персональний помічник". Для використання програми, будь ласка, запустіть    відповідний файл Python та дотримуйтесь інструкцій, наданих в командному рядку програми.
     
 ## Install Python-package
-
 ```
 pip install -i https://test.pypi.org/simple/ Willy
 ```
-
 або
-
 ```
 pip3 install -i https://test.pypi.org/simple/ Willy
 ```
