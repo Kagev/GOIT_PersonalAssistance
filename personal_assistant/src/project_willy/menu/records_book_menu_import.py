@@ -1,9 +1,10 @@
 
-from project_willy.methods.data import RECORDS_BOOK, autosave
+from project_willy.methods.data import RECORDS_BOOK, NOTES_BOOK, autosave
 
 from project_willy.methods.imports import Path
 
 from project_willy.methods.records_book_methods import RecordsBook
+from project_willy.methods.notes_methods import NotesBook
 from project_willy.methods.file_operations_methods import FileOperations
 from project_willy.methods.menu_general_methods import General
 from project_willy.methods.errors_processing import error_handler
@@ -35,9 +36,10 @@ class ImportMenu(General):
     def import_records_book_from_pickle(self, path_from_user: str) -> None:
         path_for_import = Path(path_from_user)
         if path_for_import.is_file():
-            imported_records_book = FileOperations.import_from_pickle(path_for_import)
-            if isinstance(imported_records_book, RecordsBook):
+            imported_records_book, imported_notes_book = FileOperations.import_from_pickle(path_for_import)
+            if isinstance(imported_records_book, RecordsBook) and isinstance(imported_records_book, NotesBook):
                 RECORDS_BOOK.update(imported_records_book)
+                NOTES_BOOK.append(imported_notes_book)
                 autosave()
                 print(ImportMenuText.import_records_book_successful_message)
                 input(GeneralText.continue_input_message)
