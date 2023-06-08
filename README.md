@@ -54,18 +54,6 @@ pip install -i https://test.pypi.org/simple/ Willy
 pip3 install -i https://test.pypi.org/simple/ Willy
 ```
 
-## Install Python-package
-
-```
-pip install -i https://test.pypi.org/simple/ Willy
-```
-
-або
-
-```
-pip3 install -i https://test.pypi.org/simple/ Willy
-```
-
 ## Run Willy
 
 в терміналі виконайте команду:
