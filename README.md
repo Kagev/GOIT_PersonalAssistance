@@ -38,10 +38,6 @@
 
 ![Willy_developers](img/slide_9.jpg)
 
-## Contacts
-
-![PyCrafters_contacts](img/slide_10.jpg)
-
 ## Install Python-package
 
 ```
