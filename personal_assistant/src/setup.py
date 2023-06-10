@@ -5,7 +5,7 @@ import os
 
 setup(
     name='Willy',
-    version='v1.0.10',
+    version='v1.0.11',
     description='Personal Assistant Willy',
     url='https://github.com/Kagev/GOIT_PersonalAssistance',
     author='PyCrafters',
