@@ -1,4 +1,4 @@
-from personal_assistant.src import setup
+
 import re
 import ast
 import pathlib

@@ -3,10 +3,17 @@ from setuptools import setup, find_namespace_packages, find_packages
 import json
 import os
 
+try:
+    import pypandoc
+    long_description = pypandoc.convert_file('README.md', 'rst')
+except(IOError, ImportError):
+    long_description = open('README.md').read()
+
 setup(
     name='Willy',
-    version='v1.0.11',
+    version='v1.2.2',
     description='Personal Assistant Willy',
+    long_description=long_description,
     url='https://github.com/Kagev/GOIT_PersonalAssistance',
     author='PyCrafters',
     author_email='PyCrafters@goit.com',
