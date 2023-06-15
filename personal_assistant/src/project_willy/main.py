@@ -7,15 +7,13 @@ from project_willy.methods.registration import Registration
 from project_willy.methods.authorization import Authorization
 from project_willy.menu.main_menu import MainMenu
 from project_willy.text_fields.general_text import GeneralText
+from text_fields.auth_menu_text import AuthMenuText
 
 
 # ----------ENTER TO MAIN MENU----------
 def main() -> None:
-    print("Welcome to Project Willy")
-    print("1. Registration")
-    print("2. Authorization")
-    print("0. EXIT")
-    choice = input("Enter your choice (1 or 2 or EXIT): ")
+    print(AuthMenuText.auth_message)
+    choice = input(">>>: ")
 
     if choice == "0" or choice.upper() == "EXIT":
         print(f'Goodbye {getpass.getuser()}')
@@ -25,8 +23,7 @@ def main() -> None:
         registration.registration_user()
         main()
     elif choice == "2":
-        # Открытие файла users.json и загрузка данных пользователей
-        
+
         authorization = Authorization()
         authorization.load_users()
         authorization.login()
