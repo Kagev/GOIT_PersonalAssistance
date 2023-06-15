@@ -13,7 +13,7 @@ from text_fields.auth_menu_text import AuthMenuText
 # ----------ENTER TO MAIN MENU----------
 def main() -> None:
     print(AuthMenuText.auth_message)
-    choice = input(">>>: ")
+    choice = input(' Pleas SING IN or REGISTER in programm.\n Enter your choice (1 or 2 or EXIT).\n\n >>>:  ')
 
     if choice == "0" or choice.upper() == "EXIT":
         print(f'Goodbye {getpass.getuser()}')
