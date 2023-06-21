@@ -1,0 +1,671 @@
+<?xml version="1.0"?>
+<!DOCTYPE graph PUBLIC "-//John Punin//DTD graph description//EN" "http://www.cs.rpi.edu/~puninj/XGMML/xgmml.dtd">
+
+    <graph directed="1" graphic="1" Layout="points">
+
+        <node id="Authorization" label="Authorization&#xa;⎯⎯⎯&#xa;identifier&#xa;key&#xa;max_attempts&#xa;password&#xa;salt&#xa;user_data&#xa;users&#xa;⎯⎯⎯&#xa;__init__&#xa;load_users&#xa;login&#xa;validate_input" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="900" y="20" h="260" w="150" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="identifier,key,max_attempts,password,salt,user_data,users"/>
+            <att name="meths" value="__init__,load_users,login,validate_input"/>
+
+            <att name="width" value="140"/>
+            <att name="height" value="224"/>
+        </node>
+        <node id="json.load" label="json.load" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="871" y="288" h="41" w="110" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="100"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="os.urandom" label="os.urandom" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="670" y="423" h="41" w="120" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="110"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="getpass.getpass" label="getpass.getpass" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="636" y="315" h="41" w="170" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="160"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="Registration" label="Registration&#xa;⎯⎯⎯&#xa;password&#xa;salt&#xa;useremail&#xa;username&#xa;userphonenumber&#xa;users&#xa;⎯⎯⎯&#xa;__init__&#xa;load_user&#xa;registration_user&#xa;save_user&#xa;validate_input" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="819" y="368" h="260" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="password,salt,useremail,username,userphonenumber,users"/>
+            <att name="meths" value="__init__,load_user,registration_user,save_user,validate_input"/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="224"/>
+        </node>
+        <node id="Return" label="Return" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="525" y="141" h="41" w="80" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="70"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="ExitFromCLI" label="ExitFromCLI" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="661" y="223" h="41" w="130" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="120"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="NameError" label="NameError" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="577" y="187" h="41" w="110" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="100"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="PhoneError" label="PhoneError" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="766" y="167" h="41" w="120" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="110"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="EmailError" label="EmailError" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="534" y="80" h="41" w="120" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="110"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="BirthdayError" label="BirthdayError" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="742" y="12" h="41" w="150" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="140"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="NotesError" label="NotesError" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="577" y="15" h="41" w="120" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="110"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="Exception" label="Exception" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="707" y="105" h="41" w="110" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="100"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="FileOperations" label="FileOperations&#xa;⎯⎯⎯&#xa;AUTOSAVE_PATH&#xa;⎯⎯⎯&#xa;autosave_to_pickle&#xa;export_to_csv&#xa;export_to_json&#xa;export_to_pickle&#xa;export_to_txt&#xa;import_from_pickle" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1081" y="23" h="200" w="160" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="AUTOSAVE_PATH"/>
+            <att name="meths" value="autosave_to_pickle,export_to_csv,export_to_json,export_to_pickle,export_to_txt,import_from_pickle"/>
+
+            <att name="width" value="150"/>
+            <att name="height" value="164"/>
+        </node>
+        <node id="list" label="list" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1283" y="45" h="41" w="60" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="50"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="dict" label="dict" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="982" y="400" h="41" w="60" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="50"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="General" label="General&#xa;⎯⎯⎯&#xa;option_exit_from_cli&#xa;option_return_to_previous&#xa;options_handler" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1082" y="229" h="118" w="195" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="option_exit_from_cli,option_return_to_previous,options_handler"/>
+
+            <att name="width" value="185"/>
+            <att name="height" value="94"/>
+        </node>
+        <node id="Notes" label="Notes&#xa;⎯⎯⎯&#xa;data&#xa;⎯⎯⎯&#xa;__init__&#xa;__str__&#xa;add_tags&#xa;add_text&#xa;create_notes&#xa;notes_info" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1229" y="331" h="200" w="104" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="data"/>
+            <att name="meths" value="__init__,__str__,add_tags,add_text,create_notes,notes_info"/>
+
+            <att name="width" value="94"/>
+            <att name="height" value="164"/>
+        </node>
+        <node id="NotesBook" label="NotesBook&#xa;⎯⎯⎯&#xa;data&#xa;⎯⎯⎯&#xa;__init__&#xa;add_notes&#xa;clear&#xa;delete_notes&#xa;find_notes&#xa;notes_calculatig&#xa;sort_by_date&#xa;sort_by_tag" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1220" y="576" h="230" w="132" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="data"/>
+            <att name="meths" value="__init__,add_notes,clear,delete_notes,find_notes,notes_calculatig,sort_by_date,sort_by_tag"/>
+
+            <att name="width" value="122"/>
+            <att name="height" value="194"/>
+        </node>
+        <node id="UserList" label="UserList" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1134" y="517" h="41" w="100" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="90"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="UserDict" label="UserDict" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1105" y="377" h="41" w="100" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="90"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="Field" label="Field&#xa;⎯⎯⎯&#xa;__value&#xa;value&#xa;⎯⎯⎯&#xa;__init__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="437" y="11" h="140" w="76" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="__value,value"/>
+            <att name="meths" value="__init__"/>
+
+            <att name="width" value="66"/>
+            <att name="height" value="104"/>
+        </node>
+        <node id="Name" label="Name&#xa;⎯⎯⎯&#xa;__init__&#xa;__repr__&#xa;name_parser&#xa;name_validate&#xa;value" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="657" y="471" h="148" w="111" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__init__,__repr__,name_parser,name_validate,value"/>
+
+            <att name="width" value="101"/>
+            <att name="height" value="124"/>
+        </node>
+        <node id="Phone" label="Phone&#xa;⎯⎯⎯&#xa;__init__&#xa;__repr__&#xa;phone_number_normalize&#xa;phone_number_validate&#xa;phone_parser&#xa;phone_type_validate&#xa;value" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="249.0" y="93.0" h="178" w="174" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__init__,__repr__,phone_number_normalize,phone_number_validate,phone_parser,phone_type_validate,value"/>
+
+            <att name="width" value="164"/>
+            <att name="height" value="154"/>
+        </node>
+        <node id="Email" label="Email&#xa;⎯⎯⎯&#xa;__init__&#xa;__repr__&#xa;email_length_validate&#xa;email_parser&#xa;value" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="19" y="10" h="148" w="167" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__init__,__repr__,email_length_validate,email_parser,value"/>
+
+            <att name="width" value="157"/>
+            <att name="height" value="124"/>
+        </node>
+        <node id="Birthday" label="Birthday&#xa;⎯⎯⎯&#xa;__init__&#xa;__repr__&#xa;birthday_normalize&#xa;value" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="457" y="244" h="133" w="146" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__init__,__repr__,birthday_normalize,value"/>
+
+            <att name="width" value="136"/>
+            <att name="height" value="109"/>
+        </node>
+        <node id="Record" label="Record&#xa;⎯⎯⎯&#xa;birthday&#xa;email&#xa;name&#xa;phones&#xa;⎯⎯⎯&#xa;__init__&#xa;__repr__&#xa;add_birthday&#xa;add_email&#xa;add_name&#xa;add_phone&#xa;days_to_birthday&#xa;record_info&#xa;record_to_dict&#xa;record_to_list&#xa;show_record" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="441" y="402" h="320" w="132" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="birthday,email,name,phones"/>
+            <att name="meths" value="__init__,__repr__,add_birthday,add_email,add_name,add_phone,days_to_birthday,record_info,record_to_dict,record_to_list,show_record"/>
+
+            <att name="width" value="122"/>
+            <att name="height" value="284"/>
+        </node>
+        <node id="RecordsBook" label="RecordsBook&#xa;⎯⎯⎯&#xa;data&#xa;⎯⎯⎯&#xa;__init__&#xa;add_record&#xa;clear&#xa;convert_record_to_list&#xa;convert_to_dict&#xa;delete_record&#xa;find_record&#xa;get_record&#xa;iterator&#xa;records_calculatig&#xa;search_in_email&#xa;search_in_names&#xa;search_in_phones&#xa;show_records&#xa;update" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="993" y="585" h="335" w="174" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="data"/>
+            <att name="meths" value="__init__,add_record,clear,convert_record_to_list,convert_to_dict,delete_record,find_record,get_record,iterator,records_calculatig,search_in_email,search_in_names,search_in_phones,show_records,update"/>
+
+            <att name="width" value="164"/>
+            <att name="height" value="299"/>
+        </node>
+        <node id="UnknownType" label="UnknownType" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="655.0" y="655.0" h="41" w="130" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="120"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="AuthMenuText" label="AuthMenuText&#xa;⎯⎯⎯&#xa;auth_message&#xa;input_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="21.0" y="479.0" h="103" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="auth_message,input_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="79"/>
+        </node>
+        <node id="ErrorsText" label="ErrorsText&#xa;⎯⎯⎯&#xa;birthday_error_message&#xa;email_error_message&#xa;exit_message&#xa;index_error_message&#xa;key_error_message&#xa;name_error_message&#xa;notes_error_message&#xa;phone_error_message&#xa;type_error_message&#xa;value_error_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="406.0" y="706.0" h="223" w="174" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="birthday_error_message,email_error_message,exit_message,index_error_message,key_error_message,name_error_message,notes_error_message,phone_error_message,type_error_message,value_error_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="164"/>
+            <att name="height" value="199"/>
+        </node>
+        <node id="GeneralText" label="GeneralText&#xa;⎯⎯⎯&#xa;continue_input_message&#xa;start_message&#xa;wrong_input_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="8.0" y="586.0" h="118" w="174" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="continue_input_message,start_message,wrong_input_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="164"/>
+            <att name="height" value="94"/>
+        </node>
+        <node id="MainMenuText" label="MainMenuText&#xa;⎯⎯⎯&#xa;input_message&#xa;options_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="217.0" y="810.0" h="103" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="input_message,options_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="79"/>
+        </node>
+        <node id="MethodsText" label="MethodsText&#xa;⎯⎯⎯&#xa;ALLOWED_PHONE_TYPES&#xa;DEFAULT_EMPTY_FIELD&#xa;DEFAULT_PHONE_TYPE&#xa;birthday_is_today_message&#xa;days_to_birthday_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="7.0" y="695.0" h="148" w="195" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="ALLOWED_PHONE_TYPES,DEFAULT_EMPTY_FIELD,DEFAULT_PHONE_TYPE,birthday_is_today_message,days_to_birthday_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="185"/>
+            <att name="height" value="124"/>
+        </node>
+        <node id="AddNotesMenuText" label="AddNotesMenuText&#xa;⎯⎯⎯&#xa;add_successful_message&#xa;options_message&#xa;tags_input_message&#xa;text_input_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="584.0" y="730.0" h="133" w="180" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="add_successful_message,options_message,tags_input_message,text_input_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="170"/>
+            <att name="height" value="109"/>
+        </node>
+        <node id="NotesMenuText" label="NotesMenuText&#xa;⎯⎯⎯&#xa;clear_input&#xa;clear_successful_message&#xa;empty_notes_book_message&#xa;input_message&#xa;options_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="790.0" y="727.0" h="148" w="188" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="clear_input,clear_successful_message,empty_notes_book_message,input_message,options_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="178"/>
+            <att name="height" value="124"/>
+        </node>
+        <node id="ChangeNotesMenuText" label="ChangeNotesMenuText&#xa;⎯⎯⎯&#xa;options_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="186.0" y="546.0" h="88" w="210" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="options_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="200"/>
+            <att name="height" value="64"/>
+        </node>
+        <node id="ShowNotesMenuText" label="ShowNotesMenuText&#xa;⎯⎯⎯&#xa;options_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="185.0" y="458.0" h="88" w="190" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="options_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="180"/>
+            <att name="height" value="64"/>
+        </node>
+        <node id="AddRecordMenuText" label="AddRecordMenuText&#xa;⎯⎯⎯&#xa;add_successful_message&#xa;birthday_input_message&#xa;email_input_message&#xa;name_input_message&#xa;options_message&#xa;phone_input_message&#xa;record_exists_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="197.0" y="637.0" h="178" w="190" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="add_successful_message,birthday_input_message,email_input_message,name_input_message,options_message,phone_input_message,record_exists_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="180"/>
+            <att name="height" value="154"/>
+        </node>
+        <node id="ShowRecordsMenuText" label="ShowRecordsMenuText&#xa;⎯⎯⎯&#xa;birthday_info&#xa;days_input_message&#xa;empty_records_book_message&#xa;input_message&#xa;no_matches_message&#xa;options_message&#xa;record_input_message&#xa;record_not_exists_message&#xa;search_input_message&#xa;submenu_options_message" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="21.0" y="242.0" h="223" w="210" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="birthday_info,days_input_message,empty_records_book_message,input_message,no_matches_message,options_message,record_input_message,record_not_exists_message,search_input_message,submenu_options_message"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="200"/>
+            <att name="height" value="199"/>
+        </node>
+
+        <edge source="json.load" target="Authorization" type="last" weight="0" label="Edge from json.load to Authorization">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="os.urandom" target="Authorization" type="last" weight="0" label="Edge from os.urandom to Authorization">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="getpass.getpass" target="Authorization" type="last" weight="0" label="Edge from getpass.getpass to Authorization">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="getpass.getpass" target="Registration" type="last" weight="0" label="Edge from getpass.getpass to Registration">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="os.urandom" target="Registration" type="last" weight="0" label="Edge from os.urandom to Registration">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="json.load" target="Registration" type="last" weight="0" label="Edge from json.load to Registration">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="PhoneError" target="Exception" type="last" weight="0" label="Edge from PhoneError to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="NotesError" target="Exception" type="last" weight="0" label="Edge from NotesError to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="NameError" target="Exception" type="last" weight="0" label="Edge from NameError to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="EmailError" target="Exception" type="last" weight="0" label="Edge from EmailError to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="BirthdayError" target="Exception" type="last" weight="0" label="Edge from BirthdayError to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Return" target="Exception" type="last" weight="0" label="Edge from Return to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="ExitFromCLI" target="Exception" type="last" weight="0" label="Edge from ExitFromCLI to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="list" target="FileOperations" type="last" weight="0" label="Edge from list to FileOperations">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="dict" target="FileOperations" type="last" weight="0" label="Edge from dict to FileOperations">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="dict" target="General" type="last" weight="0" label="Edge from dict to General">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="NotesBook" target="UserList" type="last" weight="0" label="Edge from NotesBook to UserList">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Notes" target="UserDict" type="last" weight="0" label="Edge from Notes to UserDict">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Notes" target="NotesBook" type="last" weight="0" label="Edge from Notes to NotesBook">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Phone" target="Field" type="last" weight="0" label="Edge from Phone to Field">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Name" target="Field" type="last" weight="0" label="Edge from Name to Field">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="RecordsBook" target="UserDict" type="last" weight="0" label="Edge from RecordsBook to UserDict">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Email" target="Field" type="last" weight="0" label="Edge from Email to Field">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Birthday" target="Field" type="last" weight="0" label="Edge from Birthday to Field">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="dict" target="RecordsBook" type="last" weight="0" label="Edge from dict to RecordsBook">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Name" target="Record" type="last" weight="0" label="Edge from Name to Record">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Email" target="Record" type="last" weight="0" label="Edge from Email to Record">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Birthday" target="Record" type="last" weight="0" label="Edge from Birthday to Record">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="UnknownType" target="Record" type="last" weight="0" label="Edge from UnknownType to Record">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Name" target="RecordsBook" type="last" weight="0" label="Edge from Name to RecordsBook">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Record" target="RecordsBook" type="last" weight="0" label="Edge from Record to RecordsBook">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Phone" target="Record" type="last" weight="0" label="Edge from Phone to Record">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+    </graph>        

@@ -1,0 +1,74 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'Authorization', 'x':900, 'y':20, 'width':140, 'height':224, 'attrs': 'identifier|key|max_attempts|password|salt|user_data|users', 'meths': '__init__|load_users|login|validate_input'}
+{'type':'umlshape', 'id':'json.load', 'x':871, 'y':288, 'width':100, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'os.urandom', 'x':670, 'y':423, 'width':110, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'getpass.getpass', 'x':636, 'y':315, 'width':160, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'Registration', 'x':819, 'y':368, 'width':130, 'height':224, 'attrs': 'password|salt|useremail|username|userphonenumber|users', 'meths': '__init__|load_user|registration_user|save_user|validate_input'}
+{'type':'umlshape', 'id':'Return', 'x':525, 'y':141, 'width':70, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'ExitFromCLI', 'x':661, 'y':223, 'width':120, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'NameError', 'x':577, 'y':187, 'width':100, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'PhoneError', 'x':766, 'y':167, 'width':110, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'EmailError', 'x':534, 'y':80, 'width':110, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'BirthdayError', 'x':742, 'y':12, 'width':140, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'NotesError', 'x':577, 'y':15, 'width':110, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'Exception', 'x':707, 'y':105, 'width':100, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'FileOperations', 'x':1081, 'y':23, 'width':150, 'height':164, 'attrs': 'AUTOSAVE_PATH', 'meths': 'autosave_to_pickle|export_to_csv|export_to_json|export_to_pickle|export_to_txt|import_from_pickle'}
+{'type':'umlshape', 'id':'list', 'x':1283, 'y':45, 'width':50, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'dict', 'x':982, 'y':400, 'width':50, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'General', 'x':1082, 'y':229, 'width':185, 'height':94, 'attrs': '', 'meths': 'option_exit_from_cli|option_return_to_previous|options_handler'}
+{'type':'umlshape', 'id':'Notes', 'x':1229, 'y':331, 'width':94, 'height':164, 'attrs': 'data', 'meths': '__init__|__str__|add_tags|add_text|create_notes|notes_info'}
+{'type':'umlshape', 'id':'NotesBook', 'x':1220, 'y':576, 'width':122, 'height':194, 'attrs': 'data', 'meths': '__init__|add_notes|clear|delete_notes|find_notes|notes_calculatig|sort_by_date|sort_by_tag'}
+{'type':'umlshape', 'id':'UserList', 'x':1134, 'y':517, 'width':90, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'UserDict', 'x':1105, 'y':377, 'width':90, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'Field', 'x':437, 'y':11, 'width':66, 'height':104, 'attrs': '__value|value', 'meths': '__init__'}
+{'type':'umlshape', 'id':'Name', 'x':657, 'y':471, 'width':101, 'height':124, 'attrs': '', 'meths': '__init__|__repr__|name_parser|name_validate|value'}
+{'type':'umlshape', 'id':'Phone', 'x':249, 'y':93, 'width':164, 'height':154, 'attrs': '', 'meths': '__init__|__repr__|phone_number_normalize|phone_number_validate|phone_parser|phone_type_validate|value'}
+{'type':'umlshape', 'id':'Email', 'x':19, 'y':10, 'width':157, 'height':124, 'attrs': '', 'meths': '__init__|__repr__|email_length_validate|email_parser|value'}
+{'type':'umlshape', 'id':'Birthday', 'x':457, 'y':244, 'width':136, 'height':109, 'attrs': '', 'meths': '__init__|__repr__|birthday_normalize|value'}
+{'type':'umlshape', 'id':'Record', 'x':441, 'y':402, 'width':122, 'height':284, 'attrs': 'birthday|email|name|phones', 'meths': '__init__|__repr__|add_birthday|add_email|add_name|add_phone|days_to_birthday|record_info|record_to_dict|record_to_list|show_record'}
+{'type':'umlshape', 'id':'RecordsBook', 'x':993, 'y':585, 'width':164, 'height':299, 'attrs': 'data', 'meths': '__init__|add_record|clear|convert_record_to_list|convert_to_dict|delete_record|find_record|get_record|iterator|records_calculatig|search_in_email|search_in_names|search_in_phones|show_records|update'}
+{'type':'umlshape', 'id':'UnknownType', 'x':755, 'y':801, 'width':120, 'height':29, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'AuthMenuText', 'x':14, 'y':592, 'width':130, 'height':79, 'attrs': 'auth_message|input_message', 'meths': ''}
+{'type':'umlshape', 'id':'ErrorsText', 'x':442, 'y':892, 'width':164, 'height':199, 'attrs': 'birthday_error_message|email_error_message|exit_message|index_error_message|key_error_message|name_error_message|notes_error_message|phone_error_message|type_error_message|value_error_message', 'meths': ''}
+{'type':'umlshape', 'id':'GeneralText', 'x':8, 'y':721, 'width':164, 'height':94, 'attrs': 'continue_input_message|start_message|wrong_input_message', 'meths': ''}
+{'type':'umlshape', 'id':'MainMenuText', 'x':591, 'y':801, 'width':130, 'height':79, 'attrs': 'input_message|options_message', 'meths': ''}
+{'type':'umlshape', 'id':'MethodsText', 'x':12, 'y':842, 'width':185, 'height':124, 'attrs': 'ALLOWED_PHONE_TYPES|DEFAULT_EMPTY_FIELD|DEFAULT_PHONE_TYPE|birthday_is_today_message|days_to_birthday_message', 'meths': ''}
+{'type':'umlshape', 'id':'AddNotesMenuText', 'x':18, 'y':1167, 'width':170, 'height':109, 'attrs': 'add_successful_message|options_message|tags_input_message|text_input_message', 'meths': ''}
+{'type':'umlshape', 'id':'NotesMenuText', 'x':16, 'y':993, 'width':178, 'height':124, 'attrs': 'clear_input|clear_successful_message|empty_notes_book_message|input_message|options_message', 'meths': ''}
+{'type':'umlshape', 'id':'ChangeNotesMenuText', 'x':209, 'y':718, 'width':200, 'height':64, 'attrs': 'options_message', 'meths': ''}
+{'type':'umlshape', 'id':'ShowNotesMenuText', 'x':182, 'y':620, 'width':180, 'height':64, 'attrs': 'options_message', 'meths': ''}
+{'type':'umlshape', 'id':'AddRecordMenuText', 'x':232, 'y':809, 'width':180, 'height':154, 'attrs': 'add_successful_message|birthday_input_message|email_input_message|name_input_message|options_message|phone_input_message|record_exists_message', 'meths': ''}
+{'type':'umlshape', 'id':'ShowRecordsMenuText', 'x':21, 'y':360, 'width':200, 'height':199, 'attrs': 'birthday_info|days_input_message|empty_records_book_message|input_message|no_matches_message|options_message|record_input_message|record_not_exists_message|search_input_message|submenu_options_message', 'meths': ''}
+{'type':'edge', 'id':'json.load_to_Authorization', 'source':'json.load', 'target':'Authorization', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'os.urandom_to_Authorization', 'source':'os.urandom', 'target':'Authorization', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'getpass.getpass_to_Authorization', 'source':'getpass.getpass', 'target':'Authorization', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'getpass.getpass_to_Registration', 'source':'getpass.getpass', 'target':'Registration', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'os.urandom_to_Registration', 'source':'os.urandom', 'target':'Registration', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'json.load_to_Registration', 'source':'json.load', 'target':'Registration', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'PhoneError_to_Exception', 'source':'PhoneError', 'target':'Exception', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'NotesError_to_Exception', 'source':'NotesError', 'target':'Exception', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'NameError_to_Exception', 'source':'NameError', 'target':'Exception', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'EmailError_to_Exception', 'source':'EmailError', 'target':'Exception', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'BirthdayError_to_Exception', 'source':'BirthdayError', 'target':'Exception', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Return_to_Exception', 'source':'Return', 'target':'Exception', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'ExitFromCLI_to_Exception', 'source':'ExitFromCLI', 'target':'Exception', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'list_to_FileOperations', 'source':'list', 'target':'FileOperations', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'dict_to_FileOperations', 'source':'dict', 'target':'FileOperations', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'dict_to_General', 'source':'dict', 'target':'General', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'NotesBook_to_UserList', 'source':'NotesBook', 'target':'UserList', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Notes_to_UserDict', 'source':'Notes', 'target':'UserDict', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Notes_to_NotesBook', 'source':'Notes', 'target':'NotesBook', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Phone_to_Field', 'source':'Phone', 'target':'Field', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Name_to_Field', 'source':'Name', 'target':'Field', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'RecordsBook_to_UserDict', 'source':'RecordsBook', 'target':'UserDict', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Email_to_Field', 'source':'Email', 'target':'Field', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Birthday_to_Field', 'source':'Birthday', 'target':'Field', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'dict_to_RecordsBook', 'source':'dict', 'target':'RecordsBook', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Name_to_Record', 'source':'Name', 'target':'Record', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Email_to_Record', 'source':'Email', 'target':'Record', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Birthday_to_Record', 'source':'Birthday', 'target':'Record', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'UnknownType_to_Record', 'source':'UnknownType', 'target':'Record', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Name_to_RecordsBook', 'source':'Name', 'target':'RecordsBook', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Record_to_RecordsBook', 'source':'Record', 'target':'RecordsBook', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Phone_to_Record', 'source':'Phone', 'target':'Record', 'uml_edge_type': 'composition'}
