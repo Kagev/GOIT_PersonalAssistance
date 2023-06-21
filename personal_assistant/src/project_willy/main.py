@@ -2,6 +2,7 @@ import getpass
 import json
 import sys
 import pathlib
+import telebot
 
 from project_willy.methods.registration import Registration
 from project_willy.methods.authorization import Authorization

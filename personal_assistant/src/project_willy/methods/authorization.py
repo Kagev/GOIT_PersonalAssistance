@@ -26,6 +26,11 @@ class Authorization:
         except (FileNotFoundError, json.JSONDecodeError):
             self.users = {}
             return False
+    
+    def validate_input(self, value, pattern, error_message):
+        while not re.match(pattern, value):
+            return error_message
+        return value
 
     def login(self):
         print("Enter your login name (email, phone number, or username)")
@@ -62,10 +67,3 @@ class Authorization:
         else:
             print("User not found")
 
-
-if __name__ == "__main__":
-    authorization = Authorization()
-    if authorization.load_user():
-        authorization.login()
-    else:
-        print("Failed to load user data. Please check the data file.")
