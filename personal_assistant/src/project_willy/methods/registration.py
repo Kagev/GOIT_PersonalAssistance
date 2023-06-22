@@ -1,3 +1,4 @@
+from abc import abstractmethod, ABC
 import re
 import hashlib
 import os
@@ -6,7 +7,8 @@ import json
 import getpass
 
 
-class Registration:
+class Registration(ABC):
+    @abstractmethod
     def __init__(self):
         self.useremail = None
         self.userphonenumber = None
@@ -15,25 +17,12 @@ class Registration:
         self.salt = None
         self.users = {}
 
+    @abstractmethod
     def load_user(self):
-        try:
-            data_folder = pathlib.Path(__file__).resolve().parent.parent / 'data'
-            file_path = data_folder.joinpath('users.json')
-            with open(file_path, "r") as file:
-                self.users = json.load(file)
-                if not isinstance(self.users, dict):
-                    self.users = {}  # Initialize as an empty dictionary if the loaded data is not a dictionary
-        except (FileNotFoundError, json.JSONDecodeError):
-            self.users = {}
+        pass
 
     def save_user(self):
-        data_folder = pathlib.Path(__file__).resolve().parent.parent / 'data'
-        data_folder.mkdir(parents=True, exist_ok=True)
-
-        file_path = data_folder.joinpath('users.json')
-        with open(file_path, 'w') as file:
-            json.dump(self.users, file, indent=2)  # Add indent parameter for pretty formatting
-            file.write('\n')  # Add newline character after each user
+        pass
 
     def validate_input(self, value, pattern, error_message):
         while not re.match(pattern, value):
@@ -93,6 +82,64 @@ class Registration:
         print(f"Registration successful. ID: {user_id} - {self.username}")
 
 
+class RegistrationAdmin(Registration, ABC):
+
+    def __init__(self):
+        super().__init__()
+
+    def load_user(self):
+        try:
+            data_folder = pathlib.Path(__file__).resolve().parent.parent / 'data'
+            file_path = data_folder.joinpath('admin.json')
+            with open(file_path, "r") as file:
+                self.users = json.load(file)
+                if not isinstance(self.users, dict):
+                    self.users = {}  # Initialize as an empty dictionary if the loaded data is not a dictionary
+        except (FileNotFoundError, json.JSONDecodeError):
+            self.users = {}
+
+    def save_user(self):
+        data_folder = pathlib.Path(__file__).resolve().parent.parent / 'data'
+        data_folder.mkdir(parents=True, exist_ok=True)
+
+        file_path = data_folder.joinpath('admin.json')
+        with open(file_path, 'w') as file:
+            json.dump(self.users, file, indent=2)  # Add indent parameter for pretty formatting
+            file.write('\n')  # Add newline character after each user
+
+
+class RegistrationUser(Registration, ABC):
+
+    def __init__(self):
+        super().__init__()
+
+    def load_user(self):
+        try:
+            data_folder = pathlib.Path(__file__).resolve().parent.parent / 'data'
+            file_path = data_folder.joinpath('users.json')
+            with open(file_path, "r") as file:
+                self.users = json.load(file)
+                if not isinstance(self.users, dict):
+                    self.users = {}  # Initialize as an empty dictionary if the loaded data is not a dictionary
+        except (FileNotFoundError, json.JSONDecodeError):
+            self.users = {}
+
+    def save_user(self):
+        data_folder = pathlib.Path(__file__).resolve().parent.parent / 'data'
+        data_folder.mkdir(parents=True, exist_ok=True)
+
+        file_path = data_folder.joinpath('users.json')
+        with open(file_path, 'w') as file:
+            json.dump(self.users, file, indent=2)  # Add indent parameter for pretty formatting
+            file.write('\n')  # Add newline character after each user
+
+
 if __name__ == "__main__":
-    registration = Registration()
-    registration.registration_user()
+    user_registration = RegistrationUser()
+    user_registration.registration_user()
+
+    admin_registration = RegistrationAdmin()
+    admin_registration.registration_user()
+
+
+

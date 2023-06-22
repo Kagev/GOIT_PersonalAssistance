@@ -9,7 +9,7 @@ from project_willy.methods.authorization import Authorization
 from project_willy.menu.main_menu import MainMenu
 from project_willy.text_fields.general_text import GeneralText
 from text_fields.auth_menu_text import AuthMenuText
-
+from abc import abstractmethod, ABC
 
 # ----------ENTER TO MAIN MENU----------
 def main() -> None:
