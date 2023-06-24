@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<!DOCTYPE graph PUBLIC "-//John Punin//DTD graph description//EN" "http://www.cs.rpi.edu/~puninj/XGMML/xgmml.dtd">
+
+    <graph directed="1" graphic="1" Layout="points">
+
+        <node id="Authorization" label="Authorization&#xa;⎯⎯⎯&#xa;identifier&#xa;key&#xa;max_attempts&#xa;password&#xa;salt&#xa;user_data&#xa;users&#xa;⎯⎯⎯&#xa;__init__&#xa;load_users&#xa;login&#xa;validate_input" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="781.0" y="136.0" h="260" w="150" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="identifier,key,max_attempts,password,salt,user_data,users"/>
+            <att name="meths" value="__init__,load_users,login,validate_input"/>
+
+            <att name="width" value="140"/>
+            <att name="height" value="224"/>
+        </node>
+        <node id="Authorization_User" label="Authorization_User&#xa;⎯⎯⎯&#xa;users&#xa;⎯⎯⎯&#xa;load_users" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="697.0" y="495.0" h="125" w="200" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="users"/>
+            <att name="meths" value="load_users"/>
+
+            <att name="width" value="190"/>
+            <att name="height" value="89"/>
+        </node>
+        <node id="Authorization_Admin" label="Authorization_Admin&#xa;⎯⎯⎯&#xa;users&#xa;⎯⎯⎯&#xa;load_users" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="347.0" y="474.0" h="125" w="210" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="users"/>
+            <att name="meths" value="load_users"/>
+
+            <att name="width" value="200"/>
+            <att name="height" value="89"/>
+        </node>
+        <node id="ABC" label="ABC" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="314.0" y="175.0" h="41" w="50" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="40"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="json.load" label="json.load" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="10" y="231" h="41" w="110" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="100"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="getpass.getpass" label="getpass.getpass" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="692" y="91" h="41" w="170" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="160"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="os.urandom" label="os.urandom" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="527" y="337" h="41" w="120" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="110"/>
+            <att name="height" value="29"/>
+        </node>
+        <node id="Registration" label="Registration&#xa;⎯⎯⎯&#xa;password&#xa;salt&#xa;useremail&#xa;username&#xa;userphonenumber&#xa;users&#xa;⎯⎯⎯&#xa;__init__&#xa;load_user&#xa;registration_user&#xa;save_user&#xa;validate_input" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="530.0" y="-58.0" h="260" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="password,salt,useremail,username,userphonenumber,users"/>
+            <att name="meths" value="__init__,load_user,registration_user,save_user,validate_input"/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="224"/>
+        </node>
+        <node id="RegistrationAdmin" label="RegistrationAdmin&#xa;⎯⎯⎯&#xa;users&#xa;⎯⎯⎯&#xa;load_user&#xa;save_user" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="89" y="458" h="140" w="190" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="users"/>
+            <att name="meths" value="load_user,save_user"/>
+
+            <att name="width" value="180"/>
+            <att name="height" value="104"/>
+        </node>
+        <node id="RegistrationUser" label="RegistrationUser&#xa;⎯⎯⎯&#xa;users&#xa;⎯⎯⎯&#xa;load_user&#xa;save_user" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="89" y="30" h="140" w="180" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="users"/>
+            <att name="meths" value="load_user,save_user"/>
+
+            <att name="width" value="170"/>
+            <att name="height" value="104"/>
+        </node>
+
+        <edge source="Authorization_Admin" target="Authorization" type="last" weight="0" label="Edge from Authorization_Admin to Authorization">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Authorization_Admin" target="ABC" type="last" weight="0" label="Edge from Authorization_Admin to ABC">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Authorization_User" target="Authorization" type="last" weight="0" label="Edge from Authorization_User to Authorization">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Authorization_User" target="ABC" type="last" weight="0" label="Edge from Authorization_User to ABC">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Authorization" target="ABC" type="last" weight="0" label="Edge from Authorization to ABC">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="json.load" target="Authorization_Admin" type="last" weight="0" label="Edge from json.load to Authorization_Admin">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="json.load" target="Authorization_User" type="last" weight="0" label="Edge from json.load to Authorization_User">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="getpass.getpass" target="Authorization" type="last" weight="0" label="Edge from getpass.getpass to Authorization">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="os.urandom" target="Authorization" type="last" weight="0" label="Edge from os.urandom to Authorization">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="RegistrationAdmin" target="ABC" type="last" weight="0" label="Edge from RegistrationAdmin to ABC">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Registration" target="ABC" type="last" weight="0" label="Edge from Registration to ABC">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="RegistrationUser" target="Registration" type="last" weight="0" label="Edge from RegistrationUser to Registration">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="RegistrationUser" target="ABC" type="last" weight="0" label="Edge from RegistrationUser to ABC">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="RegistrationAdmin" target="Registration" type="last" weight="0" label="Edge from RegistrationAdmin to Registration">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="json.load" target="RegistrationUser" type="last" weight="0" label="Edge from json.load to RegistrationUser">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="getpass.getpass" target="Registration" type="last" weight="0" label="Edge from getpass.getpass to Registration">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="os.urandom" target="Registration" type="last" weight="0" label="Edge from os.urandom to Registration">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="json.load" target="RegistrationAdmin" type="last" weight="0" label="Edge from json.load to RegistrationAdmin">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+    </graph>        
